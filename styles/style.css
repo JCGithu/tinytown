@@ -24,12 +24,14 @@ body {
 h1 {
   color: orange;
   font-size: 2rem;
+  margin: 1rem 0 0 0;
 }
 
 .subtitle {
   font-weight: normal;
   font-size: 1rem;
   position: relative;
+  margin: 0.2rem 0.2rem 0.5rem 0.2rem;
 }
 
 .text-wrapper {
