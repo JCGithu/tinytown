@@ -23,8 +23,8 @@
         "data": true
     },
     "Cat": {
-        "col1":"98FFFC",
-        "col2": "FD87C9",
+        "col1":"f6b95c",
+        "col2": "f9f28a",
         "x":14.5,
         "y": 9.5,
         "z": 1,
@@ -36,8 +36,8 @@
         "data": true
     },
     "Red": {
-        "col1":"98FFFC",
-        "col2": "FD87C9",
+        "col1":"8f1524",
+        "col2": "e7e2e8",
         "x":10,
         "y": 6,
         "z": 1,
