@@ -1,35 +1,52 @@
 {
     "Colloquial": {
-        "col1": "#FFFF00",
-        "col2":"#f18c12",
+        "col1": "bc9459",
+        "col2": "F2CE96",
         "x": 3,
         "y":2,
         "img": "house.png",
         "title": "Owl House",
         "owner": "ColloquialOwl",
-        "notes": "This house was build only using the purest feathers imaginable."
+        "notes": "This house was build only using the purest feathers imaginable.",
+        "data": true
     },
     "Blue": {
-        "col1":"#98FFFC",
-        "col2":" #FD87C9",
+        "col1": "98FFFC",
+        "col2": "FD87C9",
         "x":10,
-        "y": 15,
+        "y": 14,
         "id": 0,
         "title": "Tester",
         "owner":"Me",
         "img":"house2.png",
-        "scale": 1.1
+        "scale": 1.1,
+        "data": true
     },
     "Blue2": {
-        "col1":"#98FFFC",
-        "col2":" #FD87C9",
-        "x":12,
-        "y": 3,
+        "col1":"98FFFC",
+        "col2": "FD87C9",
+        "x":14,
+        "y": 10,
+        "z": 1,
         "id": 0,
         "title": "Huzzah!",
         "owner":"Pika",
         "img":"house2.png",
-        "scale": 1.1
+        "scale": 1.1,
+        "data": true
+    },
+    "Cafe": {
+        "col1":"f56c73",
+        "col2":"f6d296",
+        "x":13,
+        "y": 6,
+        "z": 2,
+        "id": 0,
+        "title": "Tiny Brew 4 U",
+        "owner":"Arcasian Investments",
+        "notes": "Come try our handcrafted sugar lumps",
+        "img":"cafe.png",
+        "scale": 2.4,
+        "data": true
     }
-
 }

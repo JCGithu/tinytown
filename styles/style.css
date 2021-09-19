@@ -49,13 +49,13 @@ a {
   transition: all 0.5s ease;
 }
 
-.house:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  z-index: 20 !important;
+#town {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-#factbox {
+#factBox {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,27 +76,59 @@ a {
   opacity: 0;
 }
 
-#factbox div {
+#factBox div {
   display: block;
   background-color: rgba(179, 128, 70, 0.9);
   height: 50%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-#factbox h2 {
+#factBox h2 {
   padding: 0 0.3rem;
   margin: 0.4rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
-#factbox #notes {
+#factBox #notes {
   margin: 0.3rem;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
-#factbox #owner {
+#factBox #owner {
   font-style: italic;
-  margin-top: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.2rem;
+}
+
+button {
+  display: inline-block;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: orange;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Poppins';
+  -webkit-transition: background 250ms ease-in-out,  -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out,  -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease,  -webkit-transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #ffb733;
+}
+
+button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
 }
 /*# sourceMappingURL=style.css.map */

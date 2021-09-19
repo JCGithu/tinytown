@@ -1,12 +1,32 @@
-let gridW = innerWidth / 20;
-let gridH = innerHeight / 20;
-
 let body = document.querySelector('body');
 let town = document.getElementById('town');
 
-//Factbox Generate
-let factbox = document.getElementById('factbox');
-let factBanner = factbox.querySelector('div');
+let townSize = town.getBoundingClientRect();
+let gridW = townSize.width / 20;
+let gridH = townSize.height / 20;
+
+function sizeReset(){
+    if ((townSize.top + (townSize.width / 1.78)) >= innerHeight){
+        let amount = innerHeight - townSize.top;
+        town.style.width = `${amount * 1.78}px`; 
+        town.style.height = `${amount}px`;
+    } else {
+        let amount = innerWidth / 1.78;
+        town.style.height = `${amount}px`;
+        town.style.width = `${innerWidth}px`;
+    }
+    
+    townSize = town.getBoundingClientRect();
+    
+    gridW = townSize.width / 20;
+    gridH = townSize.height / 20;
+}
+
+sizeReset();
+
+//factBox Generate
+let factBox = document.getElementById('factBox');
+let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 let factOwner = document.getElementById('owner');
 let factNotes = document.getElementById('notes');
@@ -23,8 +43,13 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
+var allColors = [];
+for (var i in tinycolor.names) {
+    allColors.push(i);
+}
+
 class House {
-    constructor({x, y, z, id, img, title, date, owner, notes, col1, col2, scale}){
+    constructor({x, y, z, id, img, title, date, owner, notes, col1, col2, scale, data}){
         this.x = x
         this.y = y
         this.z = z
@@ -37,10 +62,13 @@ class House {
         this.col1 = col1;
         this.col2 = col2;
         this.scale = scale;
+        this.data = data;
     };
 
     init(){
-        console.log(this.title);
+        if (!this.col1){
+            this.col1 = 'b38046', this.col2 = 'b38046';
+        }
         let img = document.createElement('img');
         img.src = `./houseData/images/${this.img}`;
         img.classList.add('house');
@@ -52,30 +80,45 @@ class House {
         img.style.zIndex = this.z;
 
         img.addEventListener('mouseenter', event => {
-            factbox.style.opacity = 1;
-            factbox.style.top= `${event.clientY}px`;
-            factbox.style.left= `${event.clientX}px`;
-            if (this.title) factTitle.innerHTML = this.title;
-            if (this.owner) factOwner.innerHTML = this.owner;
-            if (this.notes) factNotes.innerHTML = this.notes;
-            if (!this.notes) factNotes.innerHTML = null;
-            if (!this.col1){
-                this.col1 = '#b38046';
-                this.col2 = '#b38046';
-            }
-            factBanner.style.backgroundColor = `${this.col1}CC`;
-            factbox.style.backgroundColor = `${this.col2}AA`;
+            if(!this.data) return;
+                factBox.style.opacity = 1;
+                factBox.style.top= `${event.clientY}px`;
+                factBox.style.left= `${event.clientX}px`;
+                img.style.transform = "scale(1.1)";
+                img.style.zIndex = 20;
+                if (this.title) factTitle.innerHTML = this.title;
+                if (this.owner) factOwner.innerHTML = this.owner;
+                if (this.notes) factNotes.innerHTML = this.notes;
+                if (!this.notes) factNotes.innerHTML = null;
+                factBanner.style.backgroundColor = tinycolor(this.col1).setAlpha(0.8).toHexString();
+                factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
+                //var triad = tinycolor(this.col1).triad();
+                factBanner.style.color = tinycolor(this.col2).toHexString;
+                factOwner.style.color = tinycolor(this.col1).toHexString;
+                factOwner.style.backgroundColor = tinycolor(this.col1).darken(20).setAlpha(0.1).toRgbString();
+                factNotes.style.color = tinycolor(this.col1).toHexString;
+
+                let pos = factBox.getBoundingClientRect();
+                if ((pos.height + pos.top)>= innerHeight){
+                    factBox.style.top = `${innerHeight - pos.height}px`;
+                }
         });
 
         img.addEventListener('mouseleave', event => {
-            factbox.style.opacity = 0;
+            if(!this.data) return;
+            factBox.style.opacity = 0;
+            img.style.transform = "scale(1)";
+            img.style.zIndex = this.z;
         })
         town.appendChild(img);
     } 
 }
 
+let districts = ['mainDistrict', 'raidDistrict', 'marblesDistrict'];
+
 function loadDistrict(district){
-    console.log(district);
+    sizeReset();
+    console.log(`${district} has loaded!`);
     readTextFile(`./houseData/${district}.json`, function(text){
     var data = JSON.parse(text);
     for (let house in data){
@@ -87,10 +130,11 @@ function loadDistrict(district){
 
 loadDistrict('mainDistrict');
 
-// Wipes the town
-let button = document.getElementById('delete');
+districts.forEach(district => {
+    let button = document.getElementById(district);
+    button.addEventListener('click', () => {
+        town.querySelectorAll('*').forEach(n => n.remove());
+        loadDistrict(district);
+    })
+});
 
-button.addEventListener('click', () => {
-    town.querySelectorAll('*').forEach(n => n.remove());
-    loadDistrict('raidDistrict');
-})
