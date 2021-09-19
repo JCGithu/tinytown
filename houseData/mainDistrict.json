@@ -22,7 +22,7 @@
         "scale": 1.1,
         "data": true
     },
-    "Blue2": {
+    "Cat": {
         "col1":"98FFFC",
         "col2": "FD87C9",
         "x":14.5,
@@ -31,7 +31,20 @@
         "id": 0,
         "title": "Huzzah!",
         "owner":"Pika",
-        "img":"house2.png",
+        "img":"house4.png",
+        "scale": 1.1,
+        "data": true
+    },
+    "Red": {
+        "col1":"98FFFC",
+        "col2": "FD87C9",
+        "x":10,
+        "y": 6,
+        "z": 1,
+        "id": 0,
+        "title": "More Tests!",
+        "owner":"House Builder",
+        "img":"house3.png",
         "scale": 1.1,
         "data": true
     },
