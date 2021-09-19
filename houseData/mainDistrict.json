@@ -1,0 +1,35 @@
+{
+    "Colloquial": {
+        "col1": "#FFFF00",
+        "col2":"#f18c12",
+        "x": 3,
+        "y":2,
+        "img": "house.png",
+        "title": "Owl House",
+        "owner": "ColloquialOwl",
+        "notes": "This house was build only using the purest feathers imaginable."
+    },
+    "Blue": {
+        "col1":"#98FFFC",
+        "col2":" #FD87C9",
+        "x":10,
+        "y": 15,
+        "id": 0,
+        "title": "Tester",
+        "owner":"Me",
+        "img":"house2.png",
+        "scale": 1.1
+    },
+    "Blue2": {
+        "col1":"#98FFFC",
+        "col2":" #FD87C9",
+        "x":12,
+        "y": 3,
+        "id": 0,
+        "title": "Huzzah!",
+        "owner":"Pika",
+        "img":"house2.png",
+        "scale": 1.1
+    }
+
+}

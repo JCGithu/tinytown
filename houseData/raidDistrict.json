@@ -1,0 +1,12 @@
+{
+    "Colloquial": {
+        "col1": "#FFFF00",
+        "col2":"#f18c12",
+        "x": 13,
+        "y": 12,
+        "img": "house.png",
+        "title": "Raid House",
+        "owner": "ColloquialOwl",
+        "notes": "This house was build only using the purest feathers imaginable."
+    }
+}

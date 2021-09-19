@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  position: absolute;
+  background-color: #fcf9e1;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins';
+  text-align: center;
+}
+
+h1 {
+  color: orange;
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 1rem;
+  position: relative;
+}
+
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+}
+
+.letter {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  display: inline-block;
+}
+
+.house {
+  position: absolute;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.house:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 20 !important;
+}
+
+#factbox {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  width: 10rem;
+  background-color: rgba(179, 128, 70, 0.7);
+  color: #fffcf7;
+  border-radius: 1rem;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#factbox div {
+  display: block;
+  background-color: rgba(179, 128, 70, 0.9);
+  height: 50%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#factbox h2 {
+  padding: 0 0.3rem;
+  margin: 0.4rem;
+  font-size: 1rem;
+}
+
+#factbox #notes {
+  margin: 0.3rem;
+  font-size: 0.6rem;
+}
+
+#factbox #owner {
+  font-style: italic;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=style.css.map */
