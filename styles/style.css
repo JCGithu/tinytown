@@ -89,9 +89,8 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   height: auto;
-  width: 10rem;
+  width: 13rem;
   background-color: rgba(179, 128, 70, 0.7);
-  color: #fffcf7;
   border-radius: 1rem;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;

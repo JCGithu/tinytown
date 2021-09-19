@@ -51,7 +51,7 @@
     "Cafe": {
         "col1":"f56c73",
         "col2":"f6d296",
-        "x":13,
+        "x":12,
         "y": 6,
         "z": 2,
         "id": 0,
@@ -60,6 +60,33 @@
         "notes": "Come try our handcrafted sugar lumps",
         "img":"cafe.png",
         "scale": 2.4,
+        "data": true
+    },
+    "Egg": {
+        "col1":"faf28a",
+        "col2":"f59991",
+        "x":6,
+        "y": 6,
+        "z": 2,
+        "id": 0,
+        "title": "Sunny Side Manor",
+        "owner":"Kellanmahree",
+        "img":"houseEgg.png",
+        "scale": 1,
+        "data": true
+    },
+    "Bear": {
+        "col1":"438c3d",
+        "col2":"cf9c7d",
+        "x":13,
+        "y": 12,
+        "z": 2,
+        "id": 0,
+        "title": "Christine’s Cabin",
+        "notes": "A tiny library in the woods",
+        "owner":"between_the_pages_co",
+        "img":"houseBear.png",
+        "scale": 1.1,
         "data": true
     }
 }

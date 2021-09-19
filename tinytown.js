@@ -68,8 +68,14 @@ class House {
 
     init(){
         if (!this.col1){
-            this.col1 = 'b38046', this.col2 = 'b38046';
+            this.col1 = 'b38046', this.col2 = 'faf28a';
         }
+        if (tinycolor.readability(this.col1, this.col2) < 1.5){
+            if (tinycolor(this.col1).getLuminance() <= 0.95) {
+                this.col1 = tinycolor(this.col1).darken(10);
+            }
+        }
+
         let img = document.createElement('img');
         img.src = `./houseData/images/${this.img}`;
         img.classList.add('house');
@@ -82,27 +88,35 @@ class House {
 
         img.addEventListener('mouseenter', event => {
             if(!this.data) return;
-                factBox.style.opacity = 1;
-                factBox.style.top= `${event.clientY}px`;
-                factBox.style.left= `${event.clientX}px`;
-                img.style.transform = "scale(1.1)";
-                img.style.zIndex = 20;
-                if (this.title) factTitle.innerHTML = this.title;
-                if (this.owner) factOwner.innerHTML = this.owner;
-                if (this.notes) factNotes.innerHTML = this.notes;
-                if (!this.notes) factNotes.innerHTML = null;
-                factBanner.style.backgroundColor = tinycolor(this.col1).setAlpha(0.8).toHexString();
-                factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
-                //var triad = tinycolor(this.col1).triad();
-                factBanner.style.color = tinycolor(this.col2).toHexString;
-                factOwner.style.color = tinycolor(this.col1).toHexString;
-                factOwner.style.backgroundColor = tinycolor(this.col1).darken(20).setAlpha(0.1).toRgbString();
-                factNotes.style.color = tinycolor(this.col1).toHexString;
+            console.log()
+            factBox.style.opacity = 1;
+            factBox.style.top= `${event.clientY}px`;
+            factBox.style.left= `${event.clientX}px`;
+            img.style.transform = "scale(1.1)";
+            img.style.zIndex = 20;
+            if (this.title) factTitle.innerHTML = this.title;
+            if (this.owner) factOwner.innerHTML = this.owner;
+            if (this.notes) factNotes.innerHTML = this.notes;
+            if (!this.notes) factNotes.innerHTML = null;
+            factBanner.style.backgroundColor = tinycolor(this.col1).setAlpha(0.8).toHexString();
+            factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
+            if (tinycolor(this.col1).getLuminance() <= 0.95){
+                factBanner.style.color = tinycolor(this.col2).toHexString();
+            } else {
+                factBanner.style.color = tinycolor(this.col2).darken(30).toHexString();
+            }
+            factOwner.style.color = tinycolor(this.col1).toHexString();
+            factOwner.style.backgroundColor = tinycolor(this.col1).darken(20).setAlpha(0.1).toRgbString();
+            factNotes.style.color = tinycolor(this.col1).toHexString();
 
-                let pos = factBox.getBoundingClientRect();
-                if ((pos.height + pos.top)>= innerHeight){
-                    factBox.style.top = `${innerHeight - pos.height}px`;
-                }
+            let pos = factBox.getBoundingClientRect();
+            if ((pos.height + pos.top)>= innerHeight){
+                factBox.style.top = `${innerHeight - pos.height}px`;
+            }
+            pos = factBox.getBoundingClientRect();
+            if ((pos.width + pos.left)>= innerWidth){
+                factBox.style.left = `${innerWidth - pos.width}px`;
+            }
         });
 
         img.addEventListener('mouseleave', event => {
