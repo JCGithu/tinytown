@@ -16,8 +16,8 @@
         "x":10,
         "y": 14,
         "id": 0,
-        "title": "Tester",
-        "owner":"Me",
+        "title": "Name Needed",
+        "owner":"Name Needed",
         "img":"house2.png",
         "scale": 1.1,
         "data": true
@@ -25,12 +25,12 @@
     "Cat": {
         "col1":"f6b95c",
         "col2": "f9f28a",
-        "x":14.5,
-        "y": 9.5,
+        "x":12.7,
+        "y": 8,
         "z": 1,
         "id": 0,
-        "title": "Huzzah!",
-        "owner":"Pika",
+        "title": "Name Needed",
+        "owner":"DesireLinesGames",
         "img":"house4.png",
         "scale": 1.1,
         "data": true
@@ -51,7 +51,7 @@
     "Cafe": {
         "col1":"f56c73",
         "col2":"f6d296",
-        "x":12,
+        "x":14,
         "y": 6,
         "z": 2,
         "id": 0,
@@ -59,7 +59,7 @@
         "owner":"Arcasian Investments",
         "notes": "Come try our handcrafted sugar lumps",
         "img":"cafe.png",
-        "scale": 2.4,
+        "scale": 3,
         "data": true
     },
     "Egg": {
@@ -78,7 +78,7 @@
     "Bear": {
         "col1":"438c3d",
         "col2":"cf9c7d",
-        "x":13,
+        "x":15,
         "y": 12,
         "z": 2,
         "id": 0,
@@ -87,6 +87,19 @@
         "owner":"between_the_pages_co",
         "img":"houseBear.png",
         "scale": 1.1,
+        "data": true
+    },
+    "Mask": {
+        "col1":"7a4ecf",
+        "col2":"f7ce2f",
+        "x":19,
+        "y": 10,
+        "z": 2,
+        "id": 0,
+        "title": "Name Needed",
+        "owner":"ArcaneTempest",
+        "img":"houseMask.png",
+        "scale": 1,
         "data": true
     }
 }
