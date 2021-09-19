@@ -6,9 +6,10 @@ let gridW = townSize.width / 20;
 let gridH = townSize.height / 20;
 
 function sizeReset(){
-    if ((townSize.top + (townSize.width / 1.78)) >= innerHeight){
+    if ((townSize.top + (innerWidth * 0.56)) >= innerHeight){
         let amount = innerHeight - townSize.top;
         town.style.width = `${amount * 1.78}px`; 
+        console.log(`${amount}px`)
         town.style.height = `${amount}px`;
     } else {
         let amount = innerWidth / 1.78;
