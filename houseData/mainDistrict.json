@@ -71,7 +71,7 @@
         "id": 0,
         "title": "Sunny Side Manor",
         "owner":"Kellanmahree",
-        "img":"houseEgg.png",
+        "img":"eggHouse.svg",
         "scale": 1,
         "data": true
     },

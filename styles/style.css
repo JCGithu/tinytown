@@ -161,5 +161,56 @@ button:active {
   bottom: 0;
   right: 1rem;
   opacity: 0.5;
+  cursor: pointer;
+}
+
+#faq {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 30;
+  background-color: #fcf9e1;
+  text-align: left;
+}
+
+.faqBox {
+  position: relative;
+  padding: 1rem;
+  height: 80%;
+  width: 80%;
+  background-color: orange;
+  color: white;
+  border-radius: 2rem;
+  line-height: 1rem;
+  overflow-y: scroll;
+}
+
+.faqBox button {
+  background-color: white;
+  color: orange;
+}
+
+.faqBox h1, .faqBox h4 {
+  color: purple;
+}
+
+#refresh {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 /*# sourceMappingURL=style.css.map */

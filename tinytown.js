@@ -130,6 +130,7 @@ class House {
 }
 
 let districts = ['mainDistrict', 'raidDistrict', 'marblesDistrict'];
+let currentDistrict = 'mainDistrict';
 
 function loadDistrict(district){
     sizeReset();
@@ -140,10 +141,11 @@ function loadDistrict(district){
         let input = new House(data[house]);
         input.init();
     }
+    currentDistrict = district;
     })
 };
 
-loadDistrict('mainDistrict');
+loadDistrict(currentDistrict);
 
 districts.forEach(district => {
     let button = document.getElementById(district);
@@ -152,4 +154,9 @@ districts.forEach(district => {
         loadDistrict(district);
     })
 });
+
+document.getElementById('refresh').addEventListener('click', ()=>{
+    town.querySelectorAll('*').forEach(n => n.remove());
+    loadDistrict(currentDistrict)
+})
 

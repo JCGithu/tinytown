@@ -40,7 +40,37 @@
         <p id="owner"></p>
         <p id="notes"></p>
     </div>
-    <p id='tag'>Please message @ColloquialOwl on Twitch to add house names or lore!</p>
+    <img src="./styles/refresh.svg" id='refresh'/>
+    <p id='tag'>FAQ</p>
+    <div id='faq' style="visibility: hidden;">
+        <div class="faqBox">
+            <h2>Frequently Accquired Quests</h2>
+            <h4>What is This?</h4>
+            <p>Tiny Town is a project from <a href='https:///twitch.tv/arcasian'>arcasian</a>. You can find her site at <a href='http://arcasian.com/'>arcasian.com</a></p>
+            <h4>Can I join?</h4>
+            <p>Yes! You can get a house over on arcasian's streams!</p>
+            <h4>My house isn't here</h4>
+            <p>Houses are being added slowly! But they'll all be added in due time</p>
+            <h4>My house doesn't have my name</h4>
+            <p>Please reach out to <a href='https://twitch.tv/ColloquialOwl'>ColloquialOwl</a> if your information isn't added or wrong.</p>
+            <h4>Some places have extra info, what is that?</h4>
+            <p>The extra text is just some lore for the town. If you have a home please let us know if you'd like your own little pocket of storytelling in the town!</p>
+            <h4>Can I help?</h4>
+            <p>Tiny Town is only drawn by arcasian, however you can help out the site by providing information or making PNGs or SVGs of houses, flowers, bushes, or buildings that aren't yet on the map!</p>
+            <button id='close'>Close</button>
+        </div>
+    </div>
     <script src="./tinytown.js"></script>
     <script src='./textanim.js'></script>
+    <script>
+        let tag = document.getElementById('tag');
+        let faq = document.getElementById('faq');
+        let close = document.getElementById('close');
+        tag.addEventListener('click', ()=>{
+            faq.style.visibility = 'visible';
+        })
+        close.addEventListener('click', ()=>{
+            faq.style.visibility = 'hidden';
+        })
+    </script>
 </body>
