@@ -1,13 +1,12 @@
 {
-    "Colloquial": {
-        "col1": "FFFF00",
-        "col2":"f18c12",
-        "x": 13,
-        "y": 12,
-        "img": "house.png",
-        "title": "Raid House",
-        "owner": "ColloquialOwl",
-        "notes": "This house was build only using the purest feathers imaginable.",
+    "Derp": {
+        "col1": "fa6678",
+        "col2":"4893f8",
+        "x": 5,
+        "y": 3,
+        "img": "houseDerp.png",
+        "title": "Derp",
+        "owner": "MattFraser",
         "data": true
     }
 }
