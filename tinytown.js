@@ -78,7 +78,7 @@ class House {
 
         let img = document.createElement('img');
         img.src = `./houseData/images/${this.img}`;
-        img.classList.add('house');
+        img.classList.add('townItem');
         img.style.bottom = `${this.y * gridH}px`;
         img.style.left = `${this.x * gridW}px`;
         if (!this.scale) this.scale = 1;

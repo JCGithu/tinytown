@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  color: orange;
+  color: #f9b85c;
   font-size: 2rem;
   margin: 1rem 0 0 0;
 }
@@ -46,7 +46,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: purple;
+  color: #f36e73;
 }
 
 .letter {
@@ -55,12 +55,36 @@ a {
   display: inline-block;
 }
 
-.house {
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.townItem {
   position: absolute;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-animation: 0.5s ease 0s 1 slideInFromLeft;
+          animation: 0.5s ease 0s 1 slideInFromLeft;
 }
 
 .townContainer {
@@ -131,7 +155,7 @@ button {
   padding: 0.5rem 1rem;
   margin: 0;
   text-decoration: none;
-  background: orange;
+  background: #f9b85c;
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
@@ -147,7 +171,7 @@ button {
 
 button:hover,
 button:focus {
-  background: #ffb733;
+  background: #fbcd8d;
 }
 
 button:active {
@@ -177,6 +201,8 @@ button:active {
   z-index: 30;
   background-color: #fcf9e1;
   text-align: left;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .faqBox {
@@ -184,7 +210,7 @@ button:active {
   padding: 1rem;
   height: 80%;
   width: 80%;
-  background-color: orange;
+  background-color: #f9b85c;
   color: white;
   border-radius: 2rem;
   line-height: 1rem;
@@ -193,11 +219,11 @@ button:active {
 
 .faqBox button {
   background-color: white;
-  color: orange;
+  color: #f9b85c;
 }
 
 .faqBox h1, .faqBox h4 {
-  color: purple;
+  color: #f36e73;
 }
 
 #refresh {

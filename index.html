@@ -51,7 +51,7 @@
         <p id="notes"></p>
     </div>
     <img src="./styles/refresh.svg" id='refresh'/>
-    <div id='faq' style="visibility: hidden;">
+    <div id='faq' style="transform: scale(0);">
         <div class="faqBox">
             <h2>Frequently Accquired Quests</h2>
             <h4>What is This?</h4>
@@ -76,10 +76,10 @@
         let faq = document.getElementById('faq');
         let close = document.getElementById('close');
         tag.addEventListener('click', ()=>{
-            faq.style.visibility = 'visible';
+            faq.style.transform = 'scale(1)';
         })
         close.addEventListener('click', ()=>{
-            faq.style.visibility = 'hidden';
+            faq.style.transform = 'scale(0)';
         })
     </script>
 </body>

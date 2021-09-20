@@ -1,5 +1,7 @@
 $base-color: #fcf9e1;
 $factbox: #b38046;
+$new-orange: #f9b85c;
+$headline: #f36e73;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
@@ -27,7 +29,7 @@ body{
 }
 
 h1{
-    color: orange;
+    color:$new-orange;
     font-size: 2rem;
     margin: 1rem 0 0 0;
 }
@@ -50,7 +52,7 @@ h1{
 
 a {
     text-decoration: none;
-    color: purple;
+    color: $headline;
 }
 
 .letter{
@@ -58,10 +60,20 @@ a {
     display: inline-block;
 }
 
-.house{
+@keyframes slideInFromLeft {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.townItem{
     position: absolute;
     transform: scale(1);
     transition: all 0.5s ease;
+    animation: 0.5s ease 0s 1 slideInFromLeft;
 }
 
 .townContainer{
@@ -116,7 +128,7 @@ button {
     padding: 0.5rem 1rem;
     margin: 0;
     text-decoration: none;
-    background: orange;
+    background:$new-orange;
     color: #ffffff;
     font-size: 1rem;
     cursor: pointer;
@@ -130,7 +142,7 @@ button {
 
 button:hover,
 button:focus {
-    background: lighten(orange, 10%);
+    background: lighten($new-orange, 10%);
 }
 
 button:active {
@@ -153,6 +165,7 @@ button:active {
     z-index: 30;
     background-color: $base-color;
     text-align: left;
+    transition: all 0.5s;
 }
 
 .faqBox{
@@ -160,17 +173,17 @@ button:active {
     padding: 1rem;
     height: 80%;
     width: 80%;
-    background-color: orange;
+    background-color:$new-orange;
     color: white;
     border-radius: 2rem;
     line-height: 1rem;
     overflow-y: scroll;
     button{
         background-color: white;
-        color: orange;
+        color:$new-orange;
     }
     h1, h4{
-        color: purple;
+        color: $headline;
     }
 }
 
