@@ -8,5 +8,27 @@
         "title": "Derp",
         "owner": "MattFraser",
         "data": true
+    },
+    "Arcasian": {
+        "col1": "ea5ca9",
+        "col2": "f5efea",
+        "x": 12,
+        "y": 12,
+        "img": "arcasian.png",
+        "title": "Arcasian",
+        "owner": "Arcasian",
+        "notes": "Rumour is powerful investor started out here...",
+        "data": true
+    },
+    "winsord": {
+        "col1": "e490ac",
+        "col2": "f8d78c",
+        "x": 11,
+        "y": 6,
+        "img": "winsord.png",
+        "title": "Winsord",
+        "owner": "Winsord",
+        "scale": 1.5,
+        "data": true
     }
 }
