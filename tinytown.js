@@ -129,7 +129,7 @@ class House {
     } 
 }
 
-let districts = ['mainDistrict', 'raidDistrict', 'marblesDistrict'];
+let districts = ['mainDistrict', 'raidDistrict', 'marblesDistrict', 'originsDistrict'];
 let currentDistrict = 'mainDistrict';
 
 function loadDistrict(district){

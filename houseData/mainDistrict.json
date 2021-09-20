@@ -2,8 +2,8 @@
     "Colloquial": {
         "col1": "bc9459",
         "col2": "F2CE96",
-        "x": 3,
-        "y":2,
+        "x": 13,
+        "y":11,
         "img": "house.png",
         "title": "Owl House",
         "owner": "ColloquialOwl",
@@ -108,9 +108,10 @@
         "x": 1,
         "y": 4,
         "z":1,
-        "title": "azlxns",
+        "title": "Kylo Rent",
         "owner": "azlxns",
         "img":"houseKylo.png",
+        "notes": "just a shy and adorable Kylo Ren going uwu for being in this cute town",
         "data":true
     }
 }
