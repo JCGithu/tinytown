@@ -155,8 +155,8 @@ districts.forEach(district => {
     })
 });
 
-document.getElementById('refresh').addEventListener('click', ()=>{
+window.addEventListener('resize', () => {
     town.querySelectorAll('*').forEach(n => n.remove());
     loadDistrict(currentDistrict)
-})
+});
 

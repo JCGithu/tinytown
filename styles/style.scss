@@ -10,12 +10,13 @@ html{
 }
 
 ::-webkit-scrollbar {
-    width: 16px;
+    width: 0.7rem;
 }
  
 ::-webkit-scrollbar-track {
-    background-color: lighten($base-color,10);
+    background-color: rgba(lighten($base-color,10), 0.5);
     border-radius: 100px;
+    margin: 1rem;
 }
  
 ::-webkit-scrollbar-thumb {
@@ -94,6 +95,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 0.5rem;
 }
 
 #town{
@@ -145,6 +147,10 @@ button {
     background:$new-orange;
     color: #ffffff;
     font-size: 1rem;
+    @media screen and (max-width: 768px) {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
     cursor: pointer;
     text-align: center;
     font-family: 'Poppins';
@@ -166,6 +172,7 @@ button:active {
 #tag{
     opacity: 0.5;
     cursor: pointer;
+    margin: 0.4rem;
 }
 
 #faq{
@@ -182,16 +189,31 @@ button:active {
     transition: all 0.5s;
 }
 
+
 .faqBox{
     position: relative;
     padding: 1rem;
     height: 80%;
-    width: 80%;
+    width: 50vw;
+    @media screen and (max-width: 1240px) {
+        width: 60vw;
+    }
+    @media screen and (max-width: 1020px) {
+        width: 75vw;
+    }
+    @media screen and (max-width: 768px) {
+        width: 90vw;
+    }
+    div{
+        width: 97%;
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 1rem;
+    }
     background-color:$new-orange;
     color: white;
     border-radius: 2rem;
     line-height: 1rem;
-    overflow-y: auto;
     button{
         background-color: white;
         color:$new-orange;
@@ -199,14 +221,4 @@ button:active {
     h1, h4{
         color: $headline;
     }
-}
-
-#refresh{
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    padding: 0.5rem;
-    position: absolute;
-    right: 0;
-    top:0;
 }

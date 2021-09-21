@@ -4,12 +4,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 0.7rem;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 100px;
+  margin: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -111,6 +112,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 0.5rem;
 }
 
 #town {
@@ -183,6 +185,13 @@ button {
   -moz-appearance: none;
 }
 
+@media screen and (max-width: 768px) {
+  button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
 button:hover,
 button:focus {
   background: #fbcd8d;
@@ -196,6 +205,7 @@ button:active {
 #tag {
   opacity: 0.5;
   cursor: pointer;
+  margin: 0.4rem;
 }
 
 #faq {
@@ -223,12 +233,36 @@ button:active {
   position: relative;
   padding: 1rem;
   height: 80%;
-  width: 80%;
+  width: 50vw;
   background-color: #f9b85c;
   color: white;
   border-radius: 2rem;
   line-height: 1rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .faqBox {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .faqBox {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faqBox {
+    width: 90vw;
+  }
+}
+
+.faqBox div {
+  width: 97%;
+  height: 100%;
   overflow-y: auto;
+  padding-right: 1rem;
 }
 
 .faqBox button {
@@ -238,15 +272,5 @@ button:active {
 
 .faqBox h1, .faqBox h4 {
   color: #f36e73;
-}
-
-#refresh {
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  padding: 0.5rem;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 /*# sourceMappingURL=style.css.map */

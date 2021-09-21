@@ -30,17 +30,5 @@
         "owner": "Winsord",
         "scale": 1.5,
         "data": true
-    },
-    "jostockdale":{
-        "date": "20/09/2021",
-        "col1": "4e9ea9",
-        "col2": "e4f8fc",
-        "x": 17,
-        "y": 16,
-        "img": "houseGreen.png",
-        "title": "jostockdale",
-        "owner": "jostockdale",
-        "notes": "Won: 20/09/21",
-        "data": true
     }
 }
