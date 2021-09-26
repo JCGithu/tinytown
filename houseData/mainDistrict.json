@@ -5,7 +5,7 @@
         "x": 13.8,
         "y":10.5,
         "z": 2,
-        "img": "house.png",
+        "img": "owlHouse.svg",
         "title": "Owl House",
         "owner": "ColloquialOwl",
         "notes": "This house was build only using the purest feathers imaginable.",
@@ -46,7 +46,7 @@
         "id": 0,
         "title": "lydiapancakes",
         "owner":"lydiapancakes",
-        "img":"house3.png",
+        "img":"angryHouse.svg",
         "scale": 1.1,
         "data": true
     },
