@@ -10,5 +10,17 @@
     "owner": "jostockdale",
     "notes": "Won: 20/09/21",
     "data": true
+    },
+    "dragonHouse":{
+        "date": "26/09/2021",
+        "col1": "B1EBF5",
+        "col2": "3D8D99",
+        "x": 10,
+        "y": 5,
+        "img": "dragonHouse.svg",
+        "title": "Cog the Dragon's house",
+        "owner": "MilliSaysMaybe",
+        "notes": "dragne1silly dragne1silly dragne1silly, Won: 26/09/21",
+        "data": true
     }
 }
