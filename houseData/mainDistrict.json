@@ -31,7 +31,7 @@
         "y": 8.4,
         "z": 1,
         "id": 0,
-        "title": "Name Needed",
+        "title": "Tigger",
         "owner":"DesireLinesGames",
         "img":"catHouse.svg",
         "scale": 1.1,
@@ -115,5 +115,15 @@
         "img":"houseKylo.png",
         "notes": "just a shy and adorable Kylo Ren going uwu for being in this cute town",
         "data":true
+    },
+    "BirdTongue": {
+        "x": 1,
+        "y": 4, 
+        "col1": "F26D71",
+        "col2": "F9DF5A",
+        "img": "houseBirdTongue.svg",
+        "owner": "DesireLinesGames",
+        "title": "Red Penguin",
+        "data": true
     }
 }
