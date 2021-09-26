@@ -87,7 +87,7 @@
         "title": "Christine’s Cabin",
         "notes": "A tiny library in the woods",
         "owner":"between_the_pages_co",
-        "img":"houseBear.png",
+        "img":"houseBear.svg",
         "scale": 1.1,
         "data": true
     },
