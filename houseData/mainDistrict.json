@@ -5,7 +5,7 @@
         "x": 13.8,
         "y":10.5,
         "z": 2,
-        "img": "owlHouse.svg",
+        "img": "ColloquialOwl_001.svg",
         "title": "Owl House",
         "owner": "ColloquialOwl",
         "notes": "This house was build only using the purest feathers imaginable.",
@@ -33,7 +33,7 @@
         "id": 0,
         "title": "Tigger",
         "owner":"DesireLinesGames",
-        "img":"catHouse.svg",
+        "img":"DesireLinesGames_001.svg",
         "scale": 1.1,
         "data": true
     },
@@ -46,7 +46,7 @@
         "id": 0,
         "title": "lydiapancakes",
         "owner":"lydiapancakes",
-        "img":"angryHouse.svg",
+        "img":"lydiapancakes_001.svg",
         "scale": 1.1,
         "data": true
     },
@@ -73,7 +73,7 @@
         "id": 0,
         "title": "Sunny Side Manor",
         "owner":"Kellanmahree",
-        "img":"eggHouse.svg",
+        "img":"Kellanmahree_001.svg",
         "scale": 1,
         "data": true
     },
@@ -87,7 +87,7 @@
         "title": "Christine’s Cabin",
         "notes": "A tiny library in the woods",
         "owner":"between_the_pages_co",
-        "img":"houseBear.svg",
+        "img":"between_the_pages_co_001.svg",
         "scale": 1.1,
         "data": true
     },
@@ -100,7 +100,7 @@
         "id": 0,
         "title": "Hellequin",
         "owner":"ArcaneTempest",
-        "img":"houseMask.svg",
+        "img":"ArcaneTempest_001.svg",
         "scale": 1,
         "data": true
     },
@@ -112,7 +112,7 @@
         "z":2,
         "title": "Kylo Rent",
         "owner": "azlxns",
-        "img":"houseKylo.png",
+        "img":"azlxns_001.svg",
         "notes": "just a shy and adorable Kylo Ren going uwu for being in this cute town",
         "data":true
     },
@@ -121,7 +121,7 @@
         "y": 4, 
         "col1": "F26D71",
         "col2": "F9DF5A",
-        "img": "houseBirdTongue.svg",
+        "img": "DesireLinesGames_002.svg",
         "owner": "DesireLinesGames",
         "title": "Red Penguin",
         "data": true
