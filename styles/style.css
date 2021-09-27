@@ -273,4 +273,16 @@ button:active {
 .faqBox h1, .faqBox h4 {
   color: #f36e73;
 }
+
+#blur {
+  width: 100%;
+  height: 100%;
+  background-color: #fcf9e1;
+  z-index: 19;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  pointer-events: none;
+}
 /*# sourceMappingURL=style.css.map */

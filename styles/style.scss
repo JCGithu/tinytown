@@ -222,3 +222,14 @@ button:active {
         color: $headline;
     }
 }
+
+#blur{
+    width: 100%;
+    height: 100%;
+    background-color: $base-color;
+    z-index: 19;
+    position: relative;
+    opacity: 0;
+    transition: all 1s;
+    pointer-events: none;
+}

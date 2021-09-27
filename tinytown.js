@@ -4,11 +4,12 @@ let town = document.getElementById('town');
 let townSize = town.getBoundingClientRect();
 let gridW = townSize.width / 20;
 let gridH = townSize.height / 20;
+let zoomed = false;
 
 function sizeReset(){
-    if ((townSize.top + (innerWidth * 0.56)) >= innerHeight){
+    if ((townSize.top + (innerWidth * 0.60)) >= innerHeight){
         let amount = innerHeight - townSize.top;
-        town.style.width = `${amount * 1.78}px`; 
+        town.style.width = `${amount * 1.66}px`; 
         console.log(`${amount}px`)
         town.style.height = `${amount}px`;
     } else {
@@ -31,6 +32,7 @@ let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 let factOwner = document.getElementById('owner');
 let factNotes = document.getElementById('notes');
+let blurry = document.getElementById('blur');
 
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -64,6 +66,7 @@ class House {
         this.col2 = col2;
         this.scale = scale;
         this.data = data;
+        this.zoom = false;
     };
 
     init(){
@@ -88,11 +91,11 @@ class House {
 
         img.addEventListener('mouseenter', event => {
             if(!this.data) return;
-            console.log()
+            if(zoomed) return;
             factBox.style.opacity = 1;
             factBox.style.top= `${event.clientY}px`;
             factBox.style.left= `${event.clientX}px`;
-            img.style.transform = "scale(1.1)";
+            if (!this.zoom) img.style.transform = "scale(1.1)";
             img.style.zIndex = 20;
             if (this.title) factTitle.innerHTML = this.title;
             if (this.owner) factOwner.innerHTML = this.owner;
@@ -122,9 +125,43 @@ class House {
 
         img.addEventListener('mouseleave', event => {
             if(!this.data) return;
+            if(zoomed) return;
             factBox.style.opacity = 0;
             img.style.transform = "scale(1)";
-            img.style.zIndex = this.z;
+            if(!this.zoom) img.style.zIndex = this.z;
+        })
+
+        img.addEventListener('click', event => {
+            if(!this.data) return;
+            if(!this.zoom){
+                if (zoomed) return;
+                img.style.width = `${townSize.height}px`;
+                img.style.height = `${townSize.height}px`;
+                img.style.bottom = `0px`;
+                img.style.left = `${(townSize.width - townSize.height)/2}px`;
+                img.style.zIndex = 20;
+                this.zoom = true;
+                let imPos = img.getBoundingClientRect();
+                factBox.style.opacity = 1;
+                factBox.style.top= `1rem`;
+                factBox.style.left= `1rem`;
+                factBox.style.fontSize = '3rem';
+                factTitle.style.fontSize = '1.5rem';
+                zoomed = true;
+                blurry.style.opacity = 0.7;
+            } else {
+                img.style.width = `${this.scale * gridW}px`;
+                img.style.height = `${this.scale * gridW}px`;
+                img.style.bottom = `${this.y * gridH}px`;
+                img.style.left = `${this.x * gridW}px`;
+                img.style.zIndex = this.z;
+                this.zoom = false;
+                zoomed = false;
+                factBox.style.opacity = 0;
+                factBox.style.fontSize = '1rem';
+                factTitle.style.fontSize = '1rem';
+                blurry.style.opacity = 0;
+            }
         })
         town.appendChild(img);
     } 
@@ -157,6 +194,7 @@ districts.forEach(district => {
 });
 
 window.addEventListener('resize', () => {
+    zoomed = false;
     town.querySelectorAll('*').forEach(n => n.remove());
     loadDistrict(currentDistrict)
 });
