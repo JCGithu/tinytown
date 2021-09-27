@@ -72,7 +72,7 @@ class House {
         }
         if (tinycolor.readability(this.col1, this.col2) < 1.5){
             if (tinycolor(this.col1).getLuminance() <= 0.95) {
-                this.col1 = tinycolor(this.col1).darken(10);
+                this.col1 = tinycolor(this.col1).darken(10).toHexString();
             }
         }
 
@@ -102,6 +102,7 @@ class House {
             factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
             if (tinycolor(this.col1).getLuminance() <= 0.95){
                 factBanner.style.color = tinycolor(this.col2).toHexString();
+
             } else {
                 factBanner.style.color = tinycolor(this.col2).darken(30).toHexString();
             }
