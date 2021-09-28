@@ -248,6 +248,8 @@ button:active {
 }
 
 .faqBox button {
+  position: absolute;
+  right: 1rem;
   background-color: white;
   color: #f9b85c;
 }

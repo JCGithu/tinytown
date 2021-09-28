@@ -167,6 +167,13 @@ class House {
                 zoomed = true;
                 blurry.style.backgroundColor = tinycolor(this.col1).darken().toHexString();
                 blurry.style.opacity = 0.4;
+                console.log(innerHeight/ innerWidth)
+                if ((innerHeight/ innerWidth) >= 1.6){
+                    console.log('yes');
+                    factBox.style.width = `${innerWidth*0.95}px`;
+                    factBox.style.left = `${innerWidth*0.025}px`;
+                    blurry.style.opacity = 0.8;
+                }
             } else {
                 Object.assign(img.style, imgDefaultStyle);
                 this.zoom = false;

@@ -201,6 +201,8 @@ button {
     border-radius: 2rem;
     line-height: 1rem;
     button{
+        position: absolute;
+        right: 1rem;
         background-color: white;
         color:$new-orange;
     }
