@@ -12,17 +12,17 @@
         "scale":1.05,
         "data": true
     },
-    "Blue": {
+    "Sparkles": {
         "col1": "98FFFC",
         "col2": "FD87C9",
         "x":8.5,
         "y": 11,
         "z": 1,
         "id": 0,
-        "title": "TBC",
+        "title": "Sparkles",
         "owner":"beckycas_",
         "img":"beckycas__001.svg",
-        "notes": "",
+        "notes": "This garden is shared with Vonnie!",
         "scale": 1.3,
         "data": true
     },
