@@ -80,8 +80,9 @@ for (var i in tinycolor.names) {
 }
 
 class House {
-    constructor({x, y, z, id, img, title, date, owner, notes, col1, col2, scale, data}){
-        this.x = x
+    constructor({left, right, y, z, id, img, title, date, owner, notes, col1, col2, scale, data, crop}){
+        this.left = left;
+        this.right = right;
         this.y = y
         this.z = z
         this.id = id;
@@ -95,6 +96,7 @@ class House {
         this.scale = scale;
         this.data = data;
         this.zoom = false;
+        this.crop = crop;
     };
 
     init(){
@@ -107,15 +109,33 @@ class House {
         if (!this.scale) this.scale = 1;
         let imgDefaultStyle = {
             bottom: `${this.y * gridH}px`,
-            left: `${this.x * gridW}px`,
             width: `${this.scale * gridW}px`,
             height: `${this.scale * gridW}px`,
             zIndex: this.z
         }
+        if (this.left !== undefined) imgDefaultStyle.left = `${this.left * gridW}px`;
+        if (this.right !== undefined) imgDefaultStyle.right = `${this.right * gridW}px`;
         let img = document.createElement('img');
         img.src = `./houseData/images/${this.img}`;
         img.classList.add('townItem');
         Object.assign(img.style, imgDefaultStyle);
+
+        if (this.crop){
+            readTextFile(`./houseData/images/${this.img}`, (text) => {
+                let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
+                let imgX = findings[0], imgY = findings[1];
+                let ratio = imgX / imgY;
+                //console.log(this.img)
+                //console.log(ratio)
+                if (ratio >= 1) {
+                    imgDefaultStyle.width = `${(this.scale * ratio) * gridW}px`
+                } else {
+                    imgDefaultStyle.width = `${this.scale * gridW}px`
+                    //imgDefaultStyle.height = `${(this.scale / ratio) * gridW}px`
+                }
+                Object.assign(img.style, imgDefaultStyle);
+            })
+        }
 
         img.addEventListener('mouseenter', event => {
             if(!this.data || zoomed) return;
