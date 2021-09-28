@@ -1,19 +1,26 @@
 let body = document.querySelector('body');
 let town = document.getElementById('town');
+let townContainer = document.getElementById('townContainer');
+let menu = document.getElementById('menu');
 
 let townSize = town.getBoundingClientRect();
+let menuSize = menu.getBoundingClientRect();
+
 let gridW = townSize.width / 20;
 let gridH = townSize.height / 20;
 let zoomed = false;
 
 function sizeReset(){
-    if ((townSize.top + (innerWidth * 0.60)) >= innerHeight){
+    //let townContainerSize = townContainer.getBoundingClientRect();
+    townContainer.style.height = `${innerHeight - menuSize.bottom}px`;
+    console.log(innerHeight - menuSize.bottom);
+    let ratio = 1.257;
+    if ((townSize.top + (innerWidth * (1/ratio))) >= innerHeight){
         let amount = innerHeight - townSize.top;
-        town.style.width = `${amount * 1.66}px`; 
-        console.log(`${amount}px`)
+        town.style.width = `${amount * ratio}px`; 
         town.style.height = `${amount}px`;
     } else {
-        let amount = innerWidth / 1.78;
+        let amount = innerWidth / ratio;
         town.style.height = `${amount}px`;
         town.style.width = `${innerWidth}px`;
     }
@@ -34,6 +41,16 @@ let factOwner = document.getElementById('owner');
 let factNotes = document.getElementById('notes');
 let blurry = document.getElementById('blur');
 
+/* let hide = document.getElementById('hide');
+
+hide.addEventListener('click', () => {
+    console.log('clicked');
+    menu.style.transform = `translateY(-${menuSize.bottom}px)`;
+    townContainer.style.transform = `translateY(-${menuSize.bottom}px)`;
+    menuSize = menu.getBoundingClientRect();
+    sizeReset();
+}); */
+
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -44,6 +61,17 @@ function readTextFile(file, callback) {
         }
     }
     rawFile.send(null);
+}
+
+function onScreenCheck(target){
+    let pos = target.getBoundingClientRect();
+    if ((pos.height + pos.top)>= innerHeight){
+        target.style.top = `${innerHeight - pos.height}px`;
+    }
+    pos = target.getBoundingClientRect();
+    if ((pos.width + pos.left)>= innerWidth){
+        target.style.left = `${innerWidth - pos.width}px`;
+    }
 }
 
 var allColors = [];
@@ -73,54 +101,41 @@ class House {
         if (!this.col1){
             this.col1 = 'b38046', this.col2 = 'faf28a';
         }
-        if (tinycolor.readability(this.col1, this.col2) < 1.5){
-            if (tinycolor(this.col1).getLuminance() <= 0.95) {
-                this.col1 = tinycolor(this.col1).darken(10).toHexString();
-            }
+        let colourScale = tinycolor(this.col1).analogous();
+        this.col1 = tinycolor(this.col1).toHexString();
+        this.col2 = tinycolor(this.col2).toHexString();
+        if (!this.scale) this.scale = 1;
+        let imgDefaultStyle = {
+            bottom: `${this.y * gridH}px`,
+            left: `${this.x * gridW}px`,
+            width: `${this.scale * gridW}px`,
+            height: `${this.scale * gridW}px`,
+            zIndex: this.z
         }
-
         let img = document.createElement('img');
         img.src = `./houseData/images/${this.img}`;
         img.classList.add('townItem');
-        img.style.bottom = `${this.y * gridH}px`;
-        img.style.left = `${this.x * gridW}px`;
-        if (!this.scale) this.scale = 1;
-        img.style.width = `${this.scale * gridW}px`;
-        img.style.height = `${this.scale * gridW}px`;
-        img.style.zIndex = this.z;
+        Object.assign(img.style, imgDefaultStyle);
 
         img.addEventListener('mouseenter', event => {
-            if(!this.data) return;
-            if(zoomed) return;
+            if(!this.data || zoomed) return;
             factBox.style.opacity = 1;
             factBox.style.top= `${event.clientY}px`;
             factBox.style.left= `${event.clientX}px`;
             if (!this.zoom) img.style.transform = "scale(1.1)";
             img.style.zIndex = 20;
-            if (this.title) factTitle.innerHTML = this.title;
-            if (this.owner) factOwner.innerHTML = this.owner;
-            if (this.notes) factNotes.innerHTML = this.notes;
-            if (!this.notes) factNotes.innerHTML = null;
-            factBanner.style.backgroundColor = tinycolor(this.col1).setAlpha(0.8).toHexString();
-            factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
-            if (tinycolor(this.col1).getLuminance() <= 0.95){
-                factBanner.style.color = tinycolor(this.col2).toHexString();
-
-            } else {
-                factBanner.style.color = tinycolor(this.col2).darken(30).toHexString();
-            }
-            factOwner.style.color = tinycolor(this.col1).toHexString();
-            factOwner.style.backgroundColor = tinycolor(this.col1).darken(20).setAlpha(0.1).toRgbString();
-            factNotes.style.color = tinycolor(this.col1).toHexString();
-
-            let pos = factBox.getBoundingClientRect();
-            if ((pos.height + pos.top)>= innerHeight){
-                factBox.style.top = `${innerHeight - pos.height}px`;
-            }
-            pos = factBox.getBoundingClientRect();
-            if ((pos.width + pos.left)>= innerWidth){
-                factBox.style.left = `${innerWidth - pos.width}px`;
-            }
+            factTitle.innerHTML = this.title;
+            factOwner.innerHTML = this.owner;
+            factNotes.innerHTML = this.notes;
+            factBanner.style.backgroundColor = this.col1;
+            factBanner.style.color = this.col2;
+            //factBox.style.backgroundColor = tinycolor(this.col2).setAlpha(0.8).toRgbString();
+            factOwner.style.color = this.col2;
+            //factOwner.style.backgroundColor = tinycolor(this.col1).darken(20).setAlpha(0.1).toRgbString();
+            factBox.style.backgroundColor = this.col2
+            factOwner.style.backgroundColor = colourScale[2].toHexString();
+            factNotes.style.color = this.col1;
+            onScreenCheck(factBox);
         });
 
         img.addEventListener('mouseleave', event => {
@@ -137,29 +152,31 @@ class House {
                 if (zoomed) return;
                 img.style.width = `${townSize.height}px`;
                 img.style.height = `${townSize.height}px`;
-                img.style.bottom = `0px`;
+                img.style.bottom = `1rem`;
                 img.style.left = `${(townSize.width - townSize.height)/2}px`;
                 img.style.zIndex = 20;
                 this.zoom = true;
-                let imPos = img.getBoundingClientRect();
                 factBox.style.opacity = 1;
                 factBox.style.top= `1rem`;
                 factBox.style.left= `1rem`;
-                factBox.style.fontSize = '3rem';
-                factTitle.style.fontSize = '1.5rem';
+                factBox.style.width = `20rem`;
+                factOwner.style.fontSize = '1.5rem';
+                factTitle.style.fontSize = '2rem';
+                factNotes.style.fontSize = '1rem';
+                img.style.transform = "scale(1)";
                 zoomed = true;
-                blurry.style.opacity = 0.7;
+                blurry.style.backgroundColor = tinycolor(this.col1).darken().toHexString();
+                blurry.style.opacity = 0.4;
             } else {
-                img.style.width = `${this.scale * gridW}px`;
-                img.style.height = `${this.scale * gridW}px`;
-                img.style.bottom = `${this.y * gridH}px`;
-                img.style.left = `${this.x * gridW}px`;
-                img.style.zIndex = this.z;
+                Object.assign(img.style, imgDefaultStyle);
                 this.zoom = false;
                 zoomed = false;
                 factBox.style.opacity = 0;
+                factBox.style.width = `13rem`;
                 factBox.style.fontSize = '1rem';
                 factTitle.style.fontSize = '1rem';
+                factOwner.style.fontSize = '1rem';
+                factNotes.style.fontSize = '0.8rem';
                 blurry.style.opacity = 0;
             }
         })

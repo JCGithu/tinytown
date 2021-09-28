@@ -30,11 +30,17 @@ body {
   text-align: center;
 }
 
-.logo {
-  height: 8rem;
-  position: relative;
-  margin-bottom: -3.5rem;
-  z-index: -1;
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1 {
@@ -70,36 +76,14 @@ a {
   display: inline-block;
 }
 
-@-webkit-keyframes slideInFromLeft {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 .townItem {
   position: absolute;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  -webkit-animation: 0.5s ease 0s 1 slideInFromLeft;
-          animation: 0.5s ease 0s 1 slideInFromLeft;
+  -webkit-animation: 0.5s ease 0s 1 scaleIn;
+          animation: 0.5s ease 0s 1 scaleIn;
 }
 
 .townContainer {
@@ -115,7 +99,7 @@ a {
   padding: 0 0.5rem;
 }
 
-#town {
+.townContainer div {
   position: relative;
 }
 
@@ -182,7 +166,6 @@ button {
   transition: background 250ms ease-in-out,  transform 150ms ease;
   transition: background 250ms ease-in-out,  transform 150ms ease,  -webkit-transform 150ms ease;
   -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -192,14 +175,13 @@ button {
   }
 }
 
-button:hover,
-button:focus {
+button:hover, button:focus {
   background: #fbcd8d;
 }
 
 button:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 #tag {
@@ -275,14 +257,38 @@ button:active {
 }
 
 #blur {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #fcf9e1;
   z-index: 19;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   -webkit-transition: all 1s;
   transition: all 1s;
   pointer-events: none;
+}
+
+@-webkit-keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

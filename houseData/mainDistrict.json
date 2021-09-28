@@ -20,8 +20,9 @@
         "z": 1,
         "id": 0,
         "title": "TBC",
-        "owner":"TBC",
-        "img":"house2.png",
+        "owner":"beckycas_",
+        "img":"beckycas__001.svg",
+        "notes": "",
         "scale": 1.3,
         "data": true
     },
@@ -35,6 +36,7 @@
         "title": "Tigger",
         "owner":"DesireLinesGames",
         "img":"DesireLinesGames_001.svg",
+        "notes": "",
         "scale": 1.1,
         "data": true
     },
@@ -48,6 +50,7 @@
         "title": "lydiapancakes",
         "owner":"lydiapancakes",
         "img":"lydiapancakes_001.svg",
+        "notes": "",
         "scale": 1.1,
         "data": true
     },
@@ -67,7 +70,7 @@
     },
     "Plants": {
         "col1": "A7EED7",
-        "col2": "E9F3F1",
+        "col2": "629D89",
         "x": 16,
         "y": 9,
         "z": 3,
@@ -88,7 +91,8 @@
         "title": "Sunny Side Manor",
         "owner":"Kellanmahree",
         "img":"Kellanmahree_001.svg",
-        "scale": 1,
+        "notes": "",
+        "scale": 1.1,
         "data": true
     },
     "Bear": {
@@ -115,6 +119,7 @@
         "title": "Hellequin",
         "owner":"ArcaneTempest",
         "img":"ArcaneTempest_001.svg",
+        "notes": "",
         "scale": 1,
         "data": true
     },
@@ -154,5 +159,13 @@
         "notes": "",
         "scale": 1.3,
         "data": true
+    },
+    "Lake1":{
+        "x": 5,
+        "y": 16,
+        "z": 1,
+        "img": "Lake_001.svg",
+        "scale": 3,
+        "data":false
     }
 }

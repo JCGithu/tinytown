@@ -8,6 +8,7 @@
         "img": "MattFraser_001.svg",
         "title": "Derp",
         "owner": "MattFraser",
+        "notes": "",
         "data": true
     },
     "Arcasian": {
@@ -31,6 +32,7 @@
         "img": "Winsord_001.svg",
         "title": "Winsord",
         "owner": "Winsord",
+        "notes": "",
         "scale": 1.5,
         "data": true
     }
