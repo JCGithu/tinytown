@@ -94,10 +94,10 @@
     "Bear": {
         "col1":"438c3d",
         "col2":"cf9c7d",
-        "left":13.1,
+        "left":12.9,
         "y": 13.3,
         "z": 2,
-        "scale": 1.3,
+        "scale": 1.7,
         "id": 0,
         "title": "Christine’s Cabin",
         "notes": "A tiny library in the woods",
@@ -487,6 +487,22 @@
         "y": 14.7,
         "z": 0,
         "img": "Tree_004.svg",
+        "scale": 1.35,
+        "data":false
+    },
+    "Tree 5":{
+        "left": 13.8,
+        "y": 13.8,
+        "z": 0,
+        "img": "Tree_005.svg",
+        "scale": 1.35,
+        "data":false
+    },
+    "Tree 6":{
+        "left": 16.45,
+        "y": 16.8,
+        "z": 0,
+        "img": "Tree_006.svg",
         "scale": 1.35,
         "data":false
     },
