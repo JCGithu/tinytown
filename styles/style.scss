@@ -88,7 +88,20 @@ a {
     align-items: center;
     div{
         position: relative;
+        background-color: $base-color;
+        border-radius: 1rem;
     }
+}
+
+.preview{
+    position: absolute;
+    opacity: 0;
+    width: 1199px;
+    left: 360px;
+    top: 138px;
+    z-index: 50;
+    /* visibility: hidden; */
+    pointer-events: none;
 }
 
 #factBox{

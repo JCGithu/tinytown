@@ -13,7 +13,6 @@ let zoomed = false;
 function sizeReset(){
     //let townContainerSize = townContainer.getBoundingClientRect();
     townContainer.style.height = `${innerHeight - menuSize.bottom}px`;
-    console.log(innerHeight - menuSize.bottom);
     let ratio = 1.257;
     if ((townSize.top + (innerWidth * (1/ratio))) >= innerHeight){
         let amount = innerHeight - townSize.top;
@@ -24,9 +23,10 @@ function sizeReset(){
         town.style.height = `${amount}px`;
         town.style.width = `${innerWidth}px`;
     }
-    
     townSize = town.getBoundingClientRect();
-    
+    if (townSize.width < innerWidth){
+        console.log('biggun');
+    }
     gridW = townSize.width / 20;
     gridH = townSize.height / 20;
 }
@@ -123,16 +123,7 @@ class House {
         if (this.crop){
             readTextFile(`./houseData/images/${this.img}`, (text) => {
                 let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
-                let imgX = findings[0], imgY = findings[1];
-                let ratio = imgX / imgY;
-                //console.log(this.img)
-                //console.log(ratio)
-                if (ratio >= 1) {
-                    imgDefaultStyle.width = `${(this.scale * ratio) * gridW}px`
-                } else {
-                    imgDefaultStyle.width = `${this.scale * gridW}px`
-                    //imgDefaultStyle.height = `${(this.scale / ratio) * gridW}px`
-                }
+                imgDefaultStyle.width = `${(this.scale * (findings[0]/findings[1])) * gridW}px`
                 Object.assign(img.style, imgDefaultStyle);
             })
         }
