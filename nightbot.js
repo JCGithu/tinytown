@@ -10,8 +10,14 @@ function runLurkMessage(){
     return lurkMessage[Math.floor(Math.random() * lurkMessage.length)];
 }
 
-const urlSearchParams = new URLSearchParams(window.location.search);
-const params = Object.fromEntries(urlSearchParams.entries());
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 function Return(x){
     return `${x}`;
@@ -23,8 +29,7 @@ if(q) {
 if (u){
     Return(u);
 }
-if(params){
-    Return(params);
-}
+
+getParameterByName('user');
 
 runLurkMessage();
