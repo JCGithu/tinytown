@@ -1,1 +1,5 @@
-return 'yes yes this works';
+function runNightBot(){
+    return 'yes yes this works';
+}
+
+runNightBot();
