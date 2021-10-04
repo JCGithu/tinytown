@@ -17,5 +17,6 @@ function Return(x){
 if (user){
     Return(user);
 }
+console.log('whahah');
 
 runLurkMessage();
