@@ -11,12 +11,9 @@ function runLurkMessage(){
 }
 
 function Return(x){
-    return `${x}`;
+    return x;
 }
 
-if (user){
-    Return(user);
-}
-console.log('whahah');
+Return(user);
 
-runLurkMessage();
+//runLurkMessage();
