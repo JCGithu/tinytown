@@ -11,9 +11,11 @@ function runLurkMessage(){
 }
 
 function qReturn(q){
-    return q;
+    return `${q}`;
 }
 
-if(q) qReturn(q);
+if(q) {
+    qReturn(q);
+};
 
 runLurkMessage();
