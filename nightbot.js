@@ -23,13 +23,6 @@ function Return(x){
     return `${x}`;
 }
 
-if(q) {
-    Return(q);
-};
-if (u){
-    Return(u);
-}
-
 getParameterByName('user');
 
 runLurkMessage();
