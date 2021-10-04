@@ -10,6 +10,9 @@ function runLurkMessage(){
     return lurkMessage[Math.floor(Math.random() * lurkMessage.length)];
 }
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
 function Return(x){
     return `${x}`;
 }
@@ -19,6 +22,9 @@ if(q) {
 };
 if (u){
     Return(u);
+}
+if(params){
+    Return(params);
 }
 
 runLurkMessage();
