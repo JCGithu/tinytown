@@ -10,6 +10,10 @@ function runLurkMessage(){
     return lurkMessage[Math.floor(Math.random() * lurkMessage.length)];
 }
 
-if(q) return q;
+function qReturn(q){
+    return q;
+}
+
+if(q) qReturn(q);
 
 runLurkMessage();
