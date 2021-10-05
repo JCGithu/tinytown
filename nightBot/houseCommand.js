@@ -25,7 +25,7 @@ let houseData = {
         "name": "Sparkles",
         "district": "Main District"
     },
-    "DesireLinesGames":{
+    "desirelinesgames":{
         "name": "Tigger and Red Penguin",
         "district": "Main District",
         "num": 2
@@ -33,14 +33,14 @@ let houseData = {
     "lydiapancakes": {
         "district": "Main District"
     },
-    "Kellanmahree": {
+    "kellanmahree": {
         "district": "Main District"
     },
     "between_the_pages_co": {
         "name": "Christine’s Cabin",
         "district": "Main District"
     },
-    "ArcaneTempest": {
+    "arcanetempest": {
         "name": "Hellequin",
         "district": "Main District and an entire library in the Raid District"
     },
@@ -48,7 +48,7 @@ let houseData = {
         "name": "Kylo Rent",
         "district": "Main District"
     },
-    "CowlandCape": {
+    "cowlandcape": {
         "district": "Main District"
     },
     "hellovonnie": {
@@ -67,18 +67,18 @@ let houseData = {
     "jostockdale":{
         "district": "Marbles District"
     },
-    "MilliSaysMaybe": {
+    "millisaysmaybe": {
         "name": "Cog the Dragon's house",
         "district": "Marbles District"
     },
-    "MattFraser": {
+    "mattfraser": {
         "name": "Derp",
         "district": "Raid District"
     },
-    "Arcasian": {
+    "arcasian": {
         "district": "Raid District"
     },
-    "Aeeolus": {
+    "aeeolus": {
         "district": "Origins District"
     }
 };
