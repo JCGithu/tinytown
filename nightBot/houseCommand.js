@@ -13,9 +13,7 @@ let name = '';
 let district = '';
 let houseData = {
     "colloquialowl": {
-        "name": null,
         "district": "Main District",
-        "num": 0,
     },
     "winsord": {
         "name": "Tall and Tiny",
