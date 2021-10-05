@@ -1,11 +1,12 @@
-let houseData = {
-    'colloquialowl': {
-        "name": "Owl House",
-        "district": "Main"
-    }
-}
+function houseCommand(input){
+    let user = input.toLowerCase();
+    let houseData = {
+        'colloquialowl': {
+            "name": "Owl House",
+            "district": "Main"
+        }
+    }    
 
-function houseCommand(user){
     if (houseData[user]){
         let district = houseData[user].district;
         let name = `called ${houseData[user].name}` || '';
@@ -14,6 +15,4 @@ function houseCommand(user){
     return 'Sorry, no data for this user yet!'
 }
 
-let upperFix = touser.toLowerCase();
-
-houseCommand(upperFix);
+houseCommand(touser);
