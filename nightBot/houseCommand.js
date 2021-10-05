@@ -14,4 +14,6 @@ function houseCommand(user){
     return 'Sorry, no data for this user yet!'
 }
 
-houseCommand(touser.toLowerCase());
+let upperFix = touser.toLowerCase();
+
+houseCommand(upperFix);
