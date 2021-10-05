@@ -13,6 +13,7 @@ let name = '';
 let district = '';
 let houseData = {
     "colloquialowl": {
+        "name": "Owl House",
         "district": "Main District",
     },
     "winsord": {
