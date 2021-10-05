@@ -20,6 +20,66 @@ let houseData = {
         "name": "Tall and Tiny",
         "district": "Main and Raid districts",
         "num": 2
+    },
+    "beckycas_":{
+        "name": "Sparkles",
+        "district": "Main District"
+    },
+    "DesireLinesGames":{
+        "name": "Tigger and Red Penguin",
+        "district": "Main District",
+        "num": 2
+    },
+    "lydiapancakes": {
+        "district": "Main District"
+    },
+    "Kellanmahree": {
+        "district": "Main District"
+    },
+    "between_the_pages_co": {
+        "name": "Christine’s Cabin",
+        "district": "Main District"
+    },
+    "ArcaneTempest": {
+        "name": "Hellequin",
+        "district": "Main District and an entire library in the Raid District"
+    },
+    "azlxns": {
+        "name": "Kylo Rent",
+        "district": "Main District"
+    },
+    "CowlandCape": {
+        "district": "Main District"
+    },
+    "hellovonnie": {
+        "district": "Main District"
+    },
+    "coco___glez":{
+        "district": "Main District",
+    },
+    "auntieplant": {
+        "district": "Main District",
+    },
+    "astoldbyangela": {
+        "name": "Wombat House",
+        "district": "Main District"
+    },
+    "jostockdale":{
+        "district": "Marbles District"
+    },
+    "MilliSaysMaybe": {
+        "name": "Cog the Dragon's house",
+        "district": "Marbles District"
+    },
+    "MattFraser": {
+        "name": "Derp",
+        "district": "Raid District"
+    },
+    "Arcasian": {
+        "district": "Raid District"
+    },
+    "Aeeolus": {
+        "district": "Origins District"
     }
 };
 houseCommand();
