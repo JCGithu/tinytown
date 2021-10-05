@@ -1,13 +1,16 @@
 function houseCommand(){
     let user = touser.toLowerCase();
     if (houseData[user]){
-        let district = ` in the ${houseData[user].district}`;
-        let num = `${houseData[user].num} houses` || 'a house';
-        let name = ` called ${houseData[user].name}` || '';
+        if (houseData[user].district) district = ` in the ${houseData[user].district}`;
+        if (houseData[user].num) num = `${houseData[user].num}`;
+        if (houseData[user].name) name = ` called ${houseData[user].name}`;
         return `@${user} has ${num}${name}${district}!`;
     }
     return 'Sorry, no data for this user yet!';
 };
+let num = 'a house'; 
+let name = '';
+let district = '';
 let houseData = {
     "colloquialowl": {
         "name": null,
