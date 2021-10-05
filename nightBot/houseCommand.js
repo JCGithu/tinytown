@@ -6,7 +6,6 @@ function houseCommand(){
             "district": "Main"
         }
     };
-
     if (houseData[user]){
         let district = houseData[user].district;
         let name = `called ${houseData[user].name}` || '';
@@ -14,5 +13,4 @@ function houseCommand(){
     }
     return 'Sorry, no data for this user yet!';
 };
-
 houseCommand();
