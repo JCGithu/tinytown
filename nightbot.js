@@ -11,4 +11,4 @@ function runLurkMessage(){
     return lurkMessage[Math.floor(Math.random() * lurkMessage.length)];
 }
 
-runLurkMessage(user);
+runLurkMessage();
