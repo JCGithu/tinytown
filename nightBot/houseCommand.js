@@ -6,7 +6,7 @@ function houseCommand(){
         if (houseData[user].name) name = ` called ${houseData[user].name}`;
         return `@${user} has ${num}${name}${district}!`;
     }
-    return 'Sorry, no data for this user yet!';
+    return `Sorry, no data for ${user} yet!`;
 };
 let num = 'a house'; 
 let name = '';
