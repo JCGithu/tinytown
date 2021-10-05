@@ -1,5 +1,5 @@
-function houseCommand(input){
-    let user = input.toLowerCase();
+function houseCommand(){
+    let user = touser.toLowerCase();
     let houseData = {
         'colloquialowl': {
             "name": "Owl House",
@@ -15,4 +15,4 @@ function houseCommand(input){
     return 'Sorry, no data for this user yet!'
 }
 
-houseCommand(touser);
+houseCommand();
