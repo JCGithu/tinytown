@@ -1,10 +1,10 @@
 function houseCommand(){
     let user = touser.toLowerCase();
     if (houseData[user]){
-        let district = houseData[user].district;
+        let district = ` in the ${houseData[user].district}`;
         let num = `${houseData[user].num} houses` || 'a house';
-        let name = `called ${houseData[user].name}` || '';
-        return `@${user} has ${num} ${name} in the ${district}!`;
+        let name = ` called ${houseData[user].name}` || '';
+        return `@${user} has ${num}${name}${district}!`;
     }
     return 'Sorry, no data for this user yet!';
 };
