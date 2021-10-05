@@ -10,8 +10,9 @@ function houseCommand(){
 };
 let houseData = {
     "colloquialowl": {
-        "name": "Owl House",
-        "district": "Main District"
+        "name": null,
+        "district": "Main District",
+        "num": 0,
     },
     "winsord": {
         "name": "Tall and Tiny",
