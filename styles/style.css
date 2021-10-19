@@ -148,12 +148,12 @@ a {
   font-size: 1.1rem;
 }
 
-#factBox #notes {
+#factBox #factNotes {
   margin: 0.3rem;
   font-size: 0.8rem;
 }
 
-#factBox #owner {
+#factBox #factOwner {
   font-style: italic;
   font-size: 1rem;
   margin: 0;
@@ -270,7 +270,7 @@ button:active {
   color: #f36e73;
 }
 
-#blur {
+#blurry {
   width: 100vw;
   height: 100vh;
   background-color: #fcf9e1;
@@ -303,6 +303,53 @@ button:active {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+.zoomedImage {
+  z-index: 20 !important;
+  bottom: 1rem !important;
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.factHover {
+  opacity: 1 !important;
+}
+
+.factZoom {
+  opacity: 1 !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  width: 20rem !important;
+}
+
+.factZoom #factOwner {
+  font-size: 1.5rem !important;
+}
+
+.factZoom h2 {
+  font-size: 2rem !important;
+}
+
+.factZoom #factNotes {
+  font-size: 1rem !important;
+}
+
+@media (max-aspect-ratio: 8 / 5) {
+  .factZoom {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+}
+
+.blurryOn {
+  opacity: 0.4 !important;
+}
+
+@media (max-aspect-ratio: 8 / 5) {
+  .blurryOn {
+    opacity: 0.8 !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -127,11 +127,11 @@ a {
         margin: 0.4rem;
         font-size: 1.1rem;
     }
-    #notes {
+    #factNotes {
         margin: 0.3rem;
         font-size: 0.8rem;
     }
-    #owner {
+    #factOwner {
         font-style: italic;
         font-size: 1rem;
         margin: 0;
@@ -223,7 +223,7 @@ button {
     }
 }
 
-#blur{
+#blurry{
     width: 100vw;
     height: 100vh;
     background-color: $base-color;
@@ -244,3 +244,44 @@ button {
       transform: scale(1);
     }
   }
+
+
+
+
+  // Extra classes
+.zoomedImage{
+    z-index: 20 !important;
+    bottom: 1rem !important;
+    transform: scale(1) !important;
+}
+
+.factHover{
+    opacity: 1 !important;
+}
+
+.factZoom{
+    opacity: 1 !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    width: 20rem !important;
+    #factOwner{
+        font-size: 1.5rem !important;
+    }
+    h2{
+        font-size: 2rem !important;
+    }
+    #factNotes{
+        font-size: 1rem !important;
+    }
+    @media (max-aspect-ratio: 8/5) {
+        width: 95vw !important;
+        left: 2.5vw !important;
+    }
+}
+
+.blurryOn{
+    opacity: 0.4 !important;
+    @media (max-aspect-ratio: 8/5) {
+        opacity: 0.8 !important;
+    }
+}
