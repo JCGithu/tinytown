@@ -2,7 +2,7 @@
     "Derp": {
         "col1": "fa6678",
         "col2":"4893f8",
-        "x": 5,
+        "left": 5,
         "y": 3,
         "z": 1,
         "img": "MattFraser_001.svg",
@@ -14,7 +14,7 @@
     "Arcasian": {
         "col1": "ea5ca9",
         "col2": "f5efea",
-        "x": 12,
+        "left": 12,
         "y": 12,
         "z": 1,
         "img": "Arcasian_001.svg",
@@ -26,7 +26,7 @@
     "winsord": {
         "col1": "e490ac",
         "col2": "f8d78c",
-        "x": 11,
+        "left": 11,
         "y": 6,
         "z": 1,
         "img": "Winsord_001.svg",

@@ -2,7 +2,7 @@
     "Aeo": {
         "col1": "eea6fd",
         "col2":"98dde6",
-        "x": 5,
+        "left": 5,
         "y": 3,
         "z": 1,
         "img": "Aeeolus_001.svg",
