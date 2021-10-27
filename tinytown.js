@@ -14,6 +14,12 @@ let zoomed = false;
 let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 
+let fireArray = ['Fire01.svg', 'Fire02.svg'];
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 function sizeReset(){
     townContainer.style.height = `${innerHeight - menuSize.bottom}px`;
     let ratio = 1.257;
@@ -103,6 +109,19 @@ class House {
             })
         }
 
+        let fireON = false;
+        let fireSHOW = false;
+
+        let fire = document.createElement('img');
+        fire.style.width = `${this.scale * gridW * 0.5}px`;
+        fire.style.zIndex = 21;
+        if (this.left !== undefined) fire.style.left = `${this.left * gridW + getRandomInt((this.scale * gridW)*0.6)}px`;
+        if (this.right !== undefined) fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.6)}px`;
+        fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.5)}px`;
+        fire.classList.add('townItem');
+        fire.style.pointerEvents = 'none';
+        town.appendChild(fire);
+
         img.addEventListener('mouseenter', event => {
             if(!this.data || zoomed) return;
             factBox.style.opacity = 1;
@@ -120,6 +139,18 @@ class House {
             factOwner.style.backgroundColor = colourScale[2].toHexString();
             factNotes.style.color = this.col1;
             onScreenCheck(factBox);
+            document.body.onkeyup = (e) => {
+                if(e.keyCode == 32){
+                    //fire.src = '';
+                    if (fireSHOW) {
+                        fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
+                        fire.style.transform = `scale(1)`;
+                    } else {
+                        fire.style.transform = `scale(0)`;
+                    }
+                    fireSHOW = !fireSHOW;
+                }
+            }
         });
 
         img.addEventListener('mouseleave', () => {
@@ -149,6 +180,7 @@ class House {
                 blurry.classList.remove('blurryOn');
             }
         })
+
         town.appendChild(img);
     } 
 }
