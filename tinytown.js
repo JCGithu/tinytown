@@ -14,7 +14,7 @@ let zoomed = false;
 let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 
-let fireArray = ['Fire01.svg', 'Fire02.svg'];
+let fireArray = ['Fire01.svg', 'Fire02.svg', 'Fire03.svg', 'Fire04.svg'];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
