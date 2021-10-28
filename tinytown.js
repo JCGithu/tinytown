@@ -115,12 +115,15 @@ class House {
         let fire = document.createElement('img');
         fire.style.width = `${this.scale * gridW * 0.35}px`;
         fire.style.zIndex = 21;
-        if (this.left !== undefined) fire.style.left = `${this.left * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
-        if (this.right !== undefined) fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
-        fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.5)}px`;
         fire.classList.add('townItem');
         fire.style.pointerEvents = 'none';
-        fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
+        fire.style.transform = `scale(0)`;
+        function fireReboot(){
+            if (this.left !== undefined) fire.style.left = `${this.left * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
+            if (this.right !== undefined) fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
+            fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.4) + getRandomInt(this.scale * gridW * 0.1)}px`;
+            fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
+        }
 
         img.addEventListener('mouseenter', event => {
             if(!this.data || zoomed) return;
@@ -143,7 +146,7 @@ class House {
             document.body.onkeyup = (e) => {
                 if(e.keyCode == 32){
                     fireSHOW = !fireSHOW;
-                    fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
+                    fireReboot();
                     if (fireSHOW) {
                         fire.style.transform = `scale(1)`;
                     } else {
