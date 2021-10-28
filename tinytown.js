@@ -14,7 +14,7 @@ let zoomed = false;
 let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 
-let fireArray = ['Fire01.svg', 'Fire04.svg'];
+let fireArray = ['Fire01.svg', 'Fire04.svg', 'Fire05.svg'];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -120,7 +120,7 @@ class House {
         fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.5)}px`;
         fire.classList.add('townItem');
         fire.style.pointerEvents = 'none';
-        town.appendChild(fire);
+        fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
 
         img.addEventListener('mouseenter', event => {
             if(!this.data || zoomed) return;
@@ -139,11 +139,12 @@ class House {
             factOwner.style.backgroundColor = colourScale[2].toHexString();
             factNotes.style.color = this.col1;
             onScreenCheck(factBox);
+            town.appendChild(fire);
             document.body.onkeyup = (e) => {
                 if(e.keyCode == 32){
                     fireSHOW = !fireSHOW;
+                    fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
                     if (fireSHOW) {
-                        fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
                         fire.style.transform = `scale(1)`;
                     } else {
                         fire.style.transform = `scale(0)`;
