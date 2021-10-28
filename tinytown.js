@@ -14,7 +14,7 @@ let zoomed = false;
 let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 
-let fireArray = ['Fire01.svg', 'Fire02.svg', 'Fire03.svg', 'Fire04.svg'];
+let fireArray = ['Fire01.svg', 'Fire04.svg'];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -113,10 +113,10 @@ class House {
         let fireSHOW = false;
 
         let fire = document.createElement('img');
-        fire.style.width = `${this.scale * gridW * 0.5}px`;
+        fire.style.width = `${this.scale * gridW * 0.35}px`;
         fire.style.zIndex = 21;
-        if (this.left !== undefined) fire.style.left = `${this.left * gridW + getRandomInt((this.scale * gridW)*0.6)}px`;
-        if (this.right !== undefined) fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.6)}px`;
+        if (this.left !== undefined) fire.style.left = `${this.left * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
+        if (this.right !== undefined) fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
         fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.5)}px`;
         fire.classList.add('townItem');
         fire.style.pointerEvents = 'none';
