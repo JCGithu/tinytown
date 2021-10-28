@@ -141,14 +141,13 @@ class House {
             onScreenCheck(factBox);
             document.body.onkeyup = (e) => {
                 if(e.keyCode == 32){
-                    //fire.src = '';
+                    fireSHOW = !fireSHOW;
                     if (fireSHOW) {
                         fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
                         fire.style.transform = `scale(1)`;
                     } else {
                         fire.style.transform = `scale(0)`;
                     }
-                    fireSHOW = !fireSHOW;
                 }
             }
         });
