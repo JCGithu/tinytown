@@ -19,5 +19,18 @@
         "img": "trainTracks.svg",
         "scale": 20,
         "data":false
+    },
+    "Station": {
+        "col1": "f07e8e",
+        "col2": "827098",
+        "left": 5,
+        "y": 2.2,
+        "z": 6,
+        "scale": 3.3,
+        "title": "Lurk Station",
+        "owner": "Arcasian Investments",
+        "notes": "Choo Choo",
+        "img": "Station_002.svg",
+        "data": true
     }
 }
