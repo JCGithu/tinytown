@@ -551,17 +551,17 @@
         "notes": "",
         "data": true
     },
-    "Unnamed32":{
+    "Emma 001":{
         "left": 17.5,
         "y": 2.75,
         "z": 10,
         "scale": 1.4,
         "col1": "6A5BA4",
         "col2": "ffffff",
-        "img": "unnamed_032.svg",
-        "owner": "TBC",
-        "title": "TBC",
-        "notes": "",
+        "img": "emma_001.svg",
+        "owner": "emma__a_",
+        "title": "NotDitto",
+        "notes": "These cats are in love! Look, Diane is sneaking out of the chimney to visit teddy",
         "data": true
     },
     "Unnamed33":{
@@ -1403,7 +1403,7 @@
     "Palm Tree 2":{
         "left": 14.1,
         "y": 3.5,
-        "z": 3,
+        "z": 9,
         "img": "palmTree_002.svg",
         "scale": 2,
         "data":false

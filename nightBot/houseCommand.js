@@ -80,6 +80,10 @@ let houseData = {
     },
     "aeeolus": {
         "district": "Origins District"
+    },
+    "emm__a_":{
+        "name": "NotDitto",
+        "district": "Main District"
     }
 };
 houseCommand();
