@@ -11,5 +11,13 @@
         "owner": "Harold Pickles Chimken",
         "notes": "Harold Pickles Chimken",
         "data": true
+    },
+    "Train Tracks":{
+        "left": 0,
+        "y": -11,
+        "z": 0,
+        "img": "trainTracks.svg",
+        "scale": 20,
+        "data":false
     }
 }

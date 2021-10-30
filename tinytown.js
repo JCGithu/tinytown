@@ -21,7 +21,6 @@ window.mobileAndTabletCheck = function() {
 };
 
 let onMobile = window.mobileAndTabletCheck();
-console.log(onMobile);
 
 let fireArray = ['Fire01.svg', 'Fire04.svg', 'Fire05.svg'];
 
@@ -105,8 +104,16 @@ class House {
 
         if (this.left !== undefined) imgDefaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) imgDefaultStyle.right = `${this.right * gridW}px`;
-        let img = document.createElement('img');
-        img.src = `./houseData/images/${this.img}`;
+        
+        let img;
+        if (onMobile){
+            img = document.createElement('object');
+            img.data = `./houseData/images/${this.img}`;
+            img.type = 'image/svg+xml';
+        } else {
+            img = document.createElement('img');
+            img.src = `./houseData/images/${this.img}`;
+        } 
         img.classList.add('townItem');
         Object.assign(img.style, imgDefaultStyle);
 
@@ -151,16 +158,19 @@ class House {
             factOwner.style.backgroundColor = colourScale[2].toHexString();
             factNotes.style.color = this.col1;
             onScreenCheck(factBox);
-            town.appendChild(fire);
             document.body.onkeyup = (e) => {
                 if(e.keyCode == 32){
                     fireSHOW = !fireSHOW;
-                    fireReboot();
+                    if (!fireON){
+                        town.appendChild(fire);
+                        fireON = true; 
+                    }
                     if (fireSHOW) {
                         fire.style.transform = `scale(1)`;
                     } else {
                         fire.style.transform = `scale(0)`;
                     }
+                    fireReboot();
                 }
             }
         });

@@ -95,10 +95,10 @@ a {
 
 .preview{
     position: absolute;
-    opacity: 0;
-    width: 1199px;
-    left: 360px;
-    top: 138px;
+    opacity: 0.2;
+    left: 0 !important;
+    width: 100%;
+    left: 100%;
     z-index: 50;
     /* visibility: hidden; */
     pointer-events: none;
