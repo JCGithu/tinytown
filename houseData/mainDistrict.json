@@ -85,9 +85,9 @@
         "y": 2.2,
         "z": 6,
         "scale": 3.8,
-        "title": "Station",
+        "title": "Main Station",
         "owner": "Arcasian Investments",
-        "notes": "Choo Choo",
+        "notes": "Tiny town residents sure are hyped about these trains!",
         "img": "Station_001.svg",
         "data": true
     },
