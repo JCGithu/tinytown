@@ -84,6 +84,13 @@ let houseData = {
     "emm__a_":{
         "name": "NotDitto",
         "district": "Main District"
+    },
+    "yukfun":{
+        "district": "Main District" 
+    },
+    "letsbrock":{
+        "district": "Main & Raid districts",
+        "num": 2,
     }
 };
 houseCommand();
