@@ -36,7 +36,7 @@
         "title": "Tigger",
         "owner":"DesireLinesGames",
         "img":"DesireLinesGames_001.svg",
-        "notes": "",
+        "notes": "A lovely cat.",
         "data": true
     },
     "lydiapancakes": {
@@ -79,15 +79,15 @@
         "data": true
     },
     "Station": {
-        "col1": "A7EED7",
-        "col2": "629D89",
+        "col1": "f8cbad",
+        "col2": "c376a6",
         "left": 0.7,
         "y": 2.2,
         "z": 6,
         "scale": 3.8,
-        "title": "Station",
+        "title": "Central Station",
         "owner": "Arcasian Investments",
-        "notes": "Choo Choo",
+        "notes": "Tiny Town residents are very hyped about these trains",
         "img": "Station_001.svg",
         "data": true
     },
@@ -240,7 +240,7 @@
     "Yukfun 1":{
         "left": 12.5,
         "y": 6.6,
-        "z": 2,
+        "z": 4,
         "col1": "EBF1F4",
         "col2": "F5837A",
         "img": "yukfun_001.svg",
@@ -293,7 +293,7 @@
     "Unnamed11":{
         "left": 0.15,
         "y": 9.8,
-        "z": 1,
+        "z": 2,
         "scale": 2.1,
         "col1": "E3A8FD",
         "col2": "6E7DF4",
@@ -630,9 +630,9 @@
         "data": true
     },
     "Unnamed38":{
-        "left": 2.5,
+        "left": 2.6,
         "y": 11.9,
-        "z": 3,
+        "z": 1,
         "scale": 1.4,
         "col1": "FED597",
         "col2": "E7A965",
@@ -645,7 +645,7 @@
     "Unnamed39":{
         "left": 4.1,
         "y": 12.15,
-        "z": 3,
+        "z": 1,
         "scale": 1.45,
         "col1": "FED597",
         "col2": "E7A965",
@@ -736,7 +736,7 @@
     "Unnamed46":{
         "left": 5.45,
         "y": 8.75,
-        "z": 2,
+        "z": 3,
         "scale": 1.4,
         "col1": "FED597",
         "col2": "E7A965",
@@ -931,7 +931,7 @@
     "Unnamed61":{
         "left": 12.65,
         "y": 4.25,
-        "z": 4,
+        "z": 6,
         "scale": 1.8,
         "col1": "FED597",
         "col2": "E7A965",
@@ -970,7 +970,7 @@
     "Unnamed64":{
         "left": 13.9,
         "y": 5.7,
-        "z": 3,
+        "z": 5,
         "scale": 1.4,
         "col1": "FED597",
         "col2": "E7A965",
@@ -1229,7 +1229,7 @@
     },
     "Chicken 1":{
         "left": 13.5,
-        "y": 14.8,
+        "y": 15,
         "z": 3,
         "img": "Chicken_001.svg",
         "title": "𝔅𝔴𝔞𝔯𝔤𝔥",
@@ -1363,7 +1363,7 @@
     "Tree 12":{
         "left": 14.45,
         "y": 6.55,
-        "z": 1,
+        "z": 4,
         "img": "Tree_12.svg",
         "scale": 1.45,
         "data":false
@@ -1401,11 +1401,11 @@
         "data":false
     },
     "Palm Tree 2":{
-        "left": 14.1,
-        "y": 3.5,
+        "left": 14.3,
+        "y": 3.9,
         "z": 9,
         "img": "palmTree_002.svg",
-        "scale": 2,
+        "scale": 1.6,
         "data":false
     },
     "Flower 1":{

@@ -35,5 +35,39 @@
         "notes": "",
         "scale": 1.5,
         "data": true
+    },
+    "Unnamed 82": {
+        "col1": "f8e8bc",
+        "col2": "d69d76",
+        "left": 15,
+        "y": 8,
+        "z": 1,
+        "img": "unnamed_082.svg",
+        "title": "Pozza Check",
+        "owner": "letsbrock",
+        "notes": "",
+        "scale": 1.8,
+        "data": true
+    },
+    "Unnamed 83": {
+        "col1": "f8e8bc",
+        "col2": "d69d76",
+        "left": 15,
+        "y": 8,
+        "z": 1,
+        "img": "unnamed_083.svg",
+        "title": "TBC",
+        "owner": "TBC",
+        "notes": "",
+        "scale": 1.8,
+        "data": true
+    },
+    "Train Tracks":{
+        "left": 0,
+        "y": -11,
+        "z": 0,
+        "img": "trainTracks.svg",
+        "scale": 20,
+        "data":false
     }
 }
