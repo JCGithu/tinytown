@@ -82,6 +82,16 @@ a {
     animation: 0.5s ease 0s 1 scaleIn;
 }
 
+.fire{
+    position: absolute;
+    transform: scale(0);
+    visibility: hidden;
+    z-index: 21;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    animation: 0.5s ease 0s 1 scaleIn;
+}
+
 .townContainer{
     display: flex;
     justify-content: center;

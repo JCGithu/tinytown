@@ -86,6 +86,19 @@ a {
           animation: 0.5s ease 0s 1 scaleIn;
 }
 
+.fire {
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  visibility: hidden;
+  z-index: 21;
+  pointer-events: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation: 0.5s ease 0s 1 scaleIn;
+          animation: 0.5s ease 0s 1 scaleIn;
+}
+
 .townContainer {
   display: -webkit-box;
   display: -ms-flexbox;
