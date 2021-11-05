@@ -211,12 +211,23 @@ function loadDistrict(district){
     })
 };
 
+let preview; 
+function previewLoad(district){
+    let pre = document.createElement('img');
+    pre.id='preview';
+    pre.src =  `./previews/${district}.png`;
+    town.prepend(pre);
+    preview = document.getElementById('preview');
+}
+
+previewLoad(currentDistrict);
 loadDistrict(currentDistrict);
 
 districts.forEach(district => {
     let button = document.getElementById(district);
     button.addEventListener('click', () => {
         town.querySelectorAll('*').forEach(n => n.remove());
+        previewLoad(district);
         loadDistrict(district);
     })
 });
@@ -227,10 +238,20 @@ window.addEventListener('resize', () => {
         this.zoom = false, zoomed = false;
         //this.house.classList.remove('zoomedImage');
         factBox.classList.remove('factZoom');
-        factBox.style.opacity = 0;
+        factBox.style.opacity = 0; 
         blurry.classList.remove('blurryOn');
     }
     town.querySelectorAll('*').forEach(n => n.remove());
     loadDistrict(currentDistrict)
 });
 
+document.body.onkeyup = (e) => {
+    //Toggle
+    if(e.keyCode === 188){
+        if (preview.style.visibility === 'visible'){
+            preview.style.visibility = 'hidden'
+            return;
+        };
+        preview.style.visibility = 'visible';
+    }
+}
