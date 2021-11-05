@@ -234,9 +234,7 @@ districts.forEach(district => {
 
 window.addEventListener('resize', () => {
     if (zoomed){
-        //Object.assign(this.house.style, this.defaultStyle);
         this.zoom = false, zoomed = false;
-        //this.house.classList.remove('zoomedImage');
         factBox.classList.remove('factZoom');
         factBox.style.opacity = 0; 
         blurry.classList.remove('blurryOn');
@@ -246,7 +244,6 @@ window.addEventListener('resize', () => {
 });
 
 document.body.onkeyup = (e) => {
-    //Toggle
     if(e.keyCode === 188){
         if (preview.style.visibility === 'visible'){
             preview.style.visibility = 'hidden'
