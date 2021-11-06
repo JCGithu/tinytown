@@ -5,3 +5,15 @@ window.mobileAndTabletCheck = function() {
 };
 
 const onMobile = window.mobileAndTabletCheck();
+
+if(!onMobile){
+    let animeScript = document.createElement('script');
+    animeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js';
+    document.head.appendChild(animeScript);
+
+    animeScript.addEventListener('load', function() {
+        let textAnim = document.createElement('script');
+        textAnim.src = './tools/textanim.js';
+        document.head.appendChild(textAnim);
+    });
+}
