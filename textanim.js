@@ -1,7 +1,10 @@
-var textWrapper = document.querySelector('.subtitle .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+function runAnimation(){
+  if (onMobile) return;
 
-anime.timeline({loop: true})
+  var textWrapper = document.querySelector('.subtitle .letters');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: true})
   .add({
     targets: '.subtitle .letter',
     translateY: [0, -6, 0],
@@ -12,3 +15,6 @@ anime.timeline({loop: true})
   }).add({
     duration: 2000,
   })
+}
+
+runAnimation();
