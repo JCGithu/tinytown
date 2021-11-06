@@ -75,11 +75,15 @@ a {
 }
 
 
-.townItem{
+.house{
     position: absolute;
     transform: scale(1);
     transition: all 0.5s ease;
     animation: 0.5s ease 0s 1 scaleIn;
+}
+
+.decoration{
+    position: absolute;
 }
 
 .fire{

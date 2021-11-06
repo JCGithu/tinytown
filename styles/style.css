@@ -76,7 +76,7 @@ a {
   display: inline-block;
 }
 
-.townItem {
+.house {
   position: absolute;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -84,6 +84,10 @@ a {
   transition: all 0.5s ease;
   -webkit-animation: 0.5s ease 0s 1 scaleIn;
           animation: 0.5s ease 0s 1 scaleIn;
+}
+
+.decoration {
+  position: absolute;
 }
 
 .fire {

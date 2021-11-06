@@ -77,9 +77,9 @@ class House {
         this.date = houseData.date || undefined;
         this.img = houseData.img;
         this.notes = houseData.notes;
-        this.col1 = tinycolor(houseData.col1).toHexString() || 'b38046';
-        this.col2 = tinycolor(houseData.col2).toHexString() || 'faf28a';
-        this.col3 = tinycolor(houseData.col1).analogous() || tinycolor('b38046').analogous();
+        this.col1 = tinycolor(houseData.col1 || 'b38046').toHexString();
+        this.col2 = tinycolor(houseData.col2 || 'faf28a').toHexString();
+        this.col3 = tinycolor(houseData.col1 || 'b38046').analogous();
         this.scale = houseData.scale || 1;
         this.data = houseData.data;
         this.crop = houseData.crop;
@@ -96,8 +96,14 @@ class House {
     };
 
     init(){
+        console.log(this.title);
+        console.log(this.col1);
+        
         if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
+
+        this.houseBox = document.createElement('section');
+        this.houseBox.classList.add('house');
     
         if (onMobile){
             this.house = document.createElement('embed');
@@ -106,9 +112,35 @@ class House {
             this.house = document.createElement('img');
             this.house.src = `./houseData/images/${this.img}`;
         }
-        this.house.classList.add('townItem');
+        this.house.classList.add('house');
+        //this.defaultStyle.backgroundColor = 'rgba(255,0,0,0.2)';
         Object.assign(this.house.style, this.defaultStyle);
+        
 
+        if (this.crop){
+            readTextFile(`./houseData/images/${this.img}`, (text) => {
+                let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
+                this.house.style.width = `${(this.scale * (findings[0]/findings[1])) * gridW}px`;
+                this.defaultStyle.width = this.house.style.width;
+            })
+        }
+        //this.houseBox.appendChild(this.house);
+        town.appendChild(this.house)
+        
+    }
+
+    decorInit(){
+        if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
+        if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
+        if (onMobile){
+            this.house = document.createElement('embed');
+            this.house.src = `./houseData/images/${this.img}`;
+        } else {
+            this.house = document.createElement('img');
+            this.house.src = `./houseData/images/${this.img}`;
+        }
+        this.house.classList.add('decoration');
+        Object.assign(this.house.style, this.defaultStyle);
         if (this.crop){
             readTextFile(`./houseData/images/${this.img}`, (text) => {
                 let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
@@ -141,7 +173,6 @@ class House {
             if(e.keyCode == 32){
                 this.fire.style.visibility = 'visible';
                 if (this.fire.style.transform === 'scale(0)') {
-                    console.log('change');
                     this.fire.style.transform = `scale(1)`;
                     return;
                 }
@@ -159,7 +190,7 @@ class House {
         if (this.right !== undefined) this.fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
         this.fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.4) + getRandomInt(this.scale * gridW * 0.1)}px`;
         this.fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
-        town.appendChild(this.fire);
+        this.house.appendChild(this.fire);
     }
 
     unhover(){
@@ -202,6 +233,10 @@ function loadDistrict(district){
         var data = JSON.parse(text);
         for (let house in data){
             let input = new House(data[house]);
+            if (!data[house].data){
+                input.decorInit();
+                continue;
+            }
             input.init();
             input.house.addEventListener('mouseenter', (event) => input.hover(event));
             input.house.addEventListener('mouseleave', (event) => input.unhover(event));
