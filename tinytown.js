@@ -66,6 +66,14 @@ function onScreenCheck(target){
     }
 }
 
+function cropEffect(cropImg, cropHouse, cropScale, cropDefaultStyle){
+    readTextFile(`./houseData/images/${cropImg}`, (text) => {
+        let findings = text.match(/(viewBox="[\d\.\s]+")/g)[0].match(/[\d\.\s]+/g)[0].split(' ');
+        cropHouse.style.width = `${(cropScale * (findings[2]/findings[3])) * gridW}px`;
+        cropDefaultStyle.width = cropHouse.style.width;
+    })
+}
+
 class House {
     constructor(houseData){
         this.left = houseData.left;
@@ -95,10 +103,7 @@ class House {
         };
     };
 
-    init(){
-        console.log(this.title);
-        console.log(this.col1);
-        
+    init(){        
         if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
 
@@ -117,13 +122,7 @@ class House {
         Object.assign(this.house.style, this.defaultStyle);
         
 
-        if (this.crop){
-            readTextFile(`./houseData/images/${this.img}`, (text) => {
-                let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
-                this.house.style.width = `${(this.scale * (findings[0]/findings[1])) * gridW}px`;
-                this.defaultStyle.width = this.house.style.width;
-            })
-        }
+        if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         //this.houseBox.appendChild(this.house);
         town.appendChild(this.house)
         
@@ -141,13 +140,7 @@ class House {
         }
         this.house.classList.add('decoration');
         Object.assign(this.house.style, this.defaultStyle);
-        if (this.crop){
-            readTextFile(`./houseData/images/${this.img}`, (text) => {
-                let findings = text.match(/(?<=viewBox\=\"0.0.)([\d\.\s]+)/g)[0].split(' ');
-                this.house.style.width = `${(this.scale * (findings[0]/findings[1])) * gridW}px`;
-                this.defaultStyle.width = this.house.style.width;
-            })
-        }
+        if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         town.appendChild(this.house);
     }
 
@@ -201,7 +194,6 @@ class House {
     }
 
     click(){
-        console.log('ZOOM!');
         if(!this.data) return;
         if(!this.zoom){
             if (zoomed) return;
