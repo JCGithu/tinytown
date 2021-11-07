@@ -203,6 +203,7 @@ class House {
         this.zoom = false, zoomed = false;
         this.house.classList.remove('zoomedImage');
         factBox.classList.remove('factZoom');
+        factBox.style.opacity = 0;
         blurry.classList.remove('blurryOn');
     }
 }
