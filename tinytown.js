@@ -155,7 +155,8 @@ class House {
         onScreenCheck(factBox);
         if (!this.fire) this.fireGen();
         document.body.onkeyup = (e) => {
-            if(e.keyCode == 32){
+            if(e.code === 'Space'){
+                console.log('space')
                 this.fire.style.visibility = 'visible';
                 if (this.fire.style.transform === 'scale(0)') {
                     this.fire.style.transform = `scale(1)`;
@@ -167,6 +168,7 @@ class House {
     }
 
     fireGen(){
+        console.log('yes!')
         this.fire = document.createElement('img');
         this.fire.classList.add('fire');
         this.fire.style.transform = `scale(0)`;
@@ -175,7 +177,7 @@ class House {
         if (this.right !== undefined) this.fire.style.right = `${this.right * gridW + getRandomInt((this.scale * gridW)*0.5)}px`;
         this.fire.style.bottom = `${(this.y * gridH) + (this.scale * gridW * 0.4) + getRandomInt(this.scale * gridW * 0.1)}px`;
         this.fire.src = `./houseData/images/${fireArray[getRandomInt(fireArray.length)]}`;
-        this.house.appendChild(this.fire);
+        town.appendChild(this.fire);
     }
 
     unhover(){
@@ -186,6 +188,7 @@ class House {
     }
 
     click(){
+        console.log('clicked');
         if(!this.data) return;
         if(!this.zoom){
             if (zoomed) return;
@@ -272,3 +275,4 @@ document.body.onkeyup = (e) => {
         preview.style.visibility = 'visible';
     }
 }
+//preview.style.visibility = 'visible';
