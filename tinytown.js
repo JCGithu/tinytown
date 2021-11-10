@@ -101,15 +101,10 @@ class House {
 
         this.houseBox = document.createElement('section');
         this.houseBox.classList.add('house');
-    
-        if (onMobile){
-            this.house = document.createElement('embed');
-            this.house.src = `./houseData/images/${this.img}`;
-        } else {
-            this.house = document.createElement('img');
-            this.house.src = `./houseData/images/${this.img}`;
-        }
+        this.house = document.createElement('img');
+        this.house.src = `./houseData/images/${this.img}`;
         this.house.classList.add('house');
+        
         Object.assign(this.house.style, this.defaultStyle);
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         if (onMobile){
