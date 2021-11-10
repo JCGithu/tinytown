@@ -104,7 +104,7 @@ class House {
         this.house = document.createElement('img');
         this.house.src = `./houseData/images/${this.img}`;
         this.house.classList.add('house');
-        
+
         Object.assign(this.house.style, this.defaultStyle);
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         if (onMobile){
@@ -119,13 +119,8 @@ class House {
     decorInit(){
         if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
-        if (onMobile){
-            this.house = document.createElement('embed');
-            this.house.src = `./houseData/images/${this.img}`;
-        } else {
-            this.house = document.createElement('img');
-            this.house.src = `./houseData/images/${this.img}`;
-        }
+        this.house = document.createElement('img');
+        this.house.src = `./houseData/images/${this.img}`;
         this.house.classList.add('decoration');
         Object.assign(this.house.style, this.defaultStyle);
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
