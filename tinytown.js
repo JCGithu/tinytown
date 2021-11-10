@@ -110,14 +110,14 @@ class House {
             this.house.src = `./houseData/images/${this.img}`;
         }
         this.house.classList.add('house');
-        //this.defaultStyle.backgroundColor = 'rgba(255,0,0,0.2)';
         Object.assign(this.house.style, this.defaultStyle);
-        
-
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
-        //this.houseBox.appendChild(this.house);
-        town.appendChild(this.house)
-        
+        if (onMobile){
+            this.house.addEventListener('click', (event) => {
+                this.click();
+            })
+        }
+        town.appendChild(this.house);
     }
 
     decorInit(){
@@ -153,7 +153,7 @@ class House {
         factOwner.style.backgroundColor = this.col3[2].toHexString();
         factNotes.style.color = this.col1;
         onScreenCheck(factBox);
-        if (!this.fire) this.fireGen();
+        if (!this.fire || !onMobile) this.fireGen();
         document.body.onkeyup = (e) => {
             if(e.code === 'Space'){
                 console.log('space')
@@ -168,7 +168,7 @@ class House {
     }
 
     fireGen(){
-        console.log('yes!')
+        console.log('Fire generated');
         this.fire = document.createElement('img');
         this.fire.classList.add('fire');
         this.fire.style.transform = `scale(0)`;
@@ -228,7 +228,7 @@ function loadDistrict(district){
             input.init();
             input.house.addEventListener('mouseenter', (event) => input.hover(event));
             input.house.addEventListener('mouseleave', (event) => input.unhover(event));
-            input.house.addEventListener('click', (event) => input.click(event));
+            if (!onMobile) input.house.addEventListener('click', (event) => input.click(event));
         }
         currentDistrict = district;
     })
