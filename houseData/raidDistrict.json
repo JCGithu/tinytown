@@ -616,7 +616,7 @@
         "img": "library.svg",
         "title": "The Tiny Town Library",
         "owner": "Arcane Tempest",
-        "notes": "",
+        "notes": "Arcane Tempest was honoured for their donations to tiny town",
         "scale": 4.8,
         "data": true
     },
@@ -627,9 +627,9 @@
         "y": 2.5,
         "z": 1,
         "img": "Station_003.svg",
-        "title": "Lurk Station",
+        "title": "Raid Station",
         "owner": "Arcasian Investments",
-        "notes": "These trains are the on;",
+        "notes": "Welcome raiders!",
         "scale": 3.6,
         "data": true
     },
