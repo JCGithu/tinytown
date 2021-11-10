@@ -6,6 +6,8 @@ window.mobileAndTabletCheck = function() {
 
 const onMobile = window.mobileAndTabletCheck();
 
+if (onMobile) console.log('User is on Mobile.');
+
 if(!onMobile){
     let animeScript = document.createElement('script');
     animeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js';
