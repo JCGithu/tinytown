@@ -109,7 +109,6 @@ class House {
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         if (onMobile){
             this.house.addEventListener('click', (event) => {
-                console.log('mobile click logged');
                 this.click();
             })
         }
@@ -179,7 +178,6 @@ class House {
     }
 
     click(){
-        console.log('clicked');
         if(!this.data) return;
         if(!this.zoom){
             if (zoomed) return;
