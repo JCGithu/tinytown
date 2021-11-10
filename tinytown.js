@@ -114,6 +114,7 @@ class House {
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
         if (onMobile){
             this.house.addEventListener('click', (event) => {
+                console.log('mobile click logged');
                 this.click();
             })
         }
@@ -153,7 +154,7 @@ class House {
         factOwner.style.backgroundColor = this.col3[2].toHexString();
         factNotes.style.color = this.col1;
         onScreenCheck(factBox);
-        if (!this.fire || !onMobile) this.fireGen();
+        if (!this.fire && !onMobile) this.fireGen();
         document.body.onkeyup = (e) => {
             if(e.code === 'Space'){
                 console.log('space')
