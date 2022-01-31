@@ -59,7 +59,7 @@ async function play(data){
   eventBox.appendChild(title);
   // load image
   let img = document.createElement('img');
-  img.src = `../houseData/images/${data.img}`;
+  img.src = `./houseData/images/${data.img}`;
   eventBox.appendChild(img);
   document.body.appendChild(eventBox);
 
