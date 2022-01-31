@@ -1,12 +1,47 @@
-img {
-  width: 250px;
-  height: 250px;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+#eventbox {
+  font-family: 'Poppins';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #f9b85c;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  max-width: 500px;
+  max-height: 500px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#eventbox * {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-animation: 0.8s ease-in-out 0s 1 scaleIn;
           animation: 0.8s ease-in-out 0s 1 scaleIn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#eventbox h1 {
+  width: 500px;
+  height: 250px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  padding: 0.5rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 @-webkit-keyframes scaleIn {
@@ -14,17 +49,13 @@ img {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
   70% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-  }
-  90% {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
+  }
+  90% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
   }
   100% {
     -webkit-transform: scale(1);
@@ -37,17 +68,13 @@ img {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
   70% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-  }
-  90% {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
+  }
+  90% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
   }
   100% {
     -webkit-transform: scale(1);

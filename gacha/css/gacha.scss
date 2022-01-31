@@ -1,23 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+$orange: #f9b85c;
+
+#eventbox{
+  font-family: 'Poppins';
+  display: flex;
+  color: $orange;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 500px;
+  max-height: 500px;
+  transition: all 0.5s ease;
+  * {
+    transition: all 0.5s ease;
+    animation: 0.8s ease-in-out 0s 1 scaleIn;
+    animation-fill-mode: forwards;
+  }
+  h1{
+    width: 500px;
+    height: 250px;
+  }
+}
+
 img {
   width: 250px;
   height: 250px;
+  padding: 0.5rem;
   transform: scale(1);
-  transition: all 0.5s ease;
-  animation: 0.8s ease-in-out 0s 1 scaleIn;
 }
 
 @keyframes scaleIn {
   0% {
     transform: scale(0);
   }
-  50% {
-    transform: scale(1.1);
-  }
   70% {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
   90% {
-    transform: scale(1.05);
+    transform: scale(0.98);
   }
   100%{
     transform: scale(1);

@@ -53,22 +53,36 @@ async function play(data){
   running = true;
 
   let eventBox = document.createElement('div');
-  eventBox.id = 'eventBox';
-  let title = document.createElement('h1');
-  title.innerHTML = `${data.redeemer}, you won ${data.owner != 'TBC' ? data.owner + "'s" : "a"} tiny home! ${data.title != 'TBC' ? "It's called " + data.title : ''}`;
-  eventBox.appendChild(title);
+  eventBox.id = 'eventbox';
   // load image
   let img = document.createElement('img');
   img.src = `./houseData/images/${data.img}`;
   console.log(data.img);
   eventBox.appendChild(img);
+  let title = document.createElement('h1');
+  title.innerHTML = `${data.redeemer},<br> you won ${data.owner != 'TBC' ? data.owner + "'s" : "a"} tiny home! ${data.title != 'TBC' ? "<br>It's called " + data.title : ''}`;
+  console.log(title.innerHTML.length);
+  console.log(title.style.fontSize);
+  if (data.owner.length > 8){
+    title.style.fontSize = '30px';
+  }
+  if (title.innerHTML.length > 50){
+    console.log(title.innerHTML);
+    let amount = (title.innerHTML.length - 50)/4;
+    title.style.fontSize = `${20 - amount}px`;
+  }
+  eventBox.appendChild(title);
   document.body.appendChild(eventBox);
+  //textFit(title);
 
   // play animation
   setTimeout(() => {
-    document.body.removeChild(document.getElementById('eventBox'));
-    running = false;
-  }, 7000)
+    document.getElementById('eventbox').style.opacity = 0;
+    setTimeout(()=>{
+      document.body.removeChild(document.getElementById('eventbox'));
+      running = false;
+    },1000);
+  }, 6000)
 }
 
 setInterval(async function (){
