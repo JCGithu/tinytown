@@ -60,6 +60,7 @@ async function play(data){
   // load image
   let img = document.createElement('img');
   img.src = `./houseData/images/${data.img}`;
+  console.log(data.img);
   eventBox.appendChild(img);
   document.body.appendChild(eventBox);
 
