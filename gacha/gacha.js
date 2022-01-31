@@ -27,7 +27,7 @@ let running = false;
 let jobQueue = [];
 
 async function boot(){
-  houses = await readTextFile(`./finalData.json`);
+  houses = await readTextFile(`./gacha/finalData.json`);
   console.log(houses);
 }
 
