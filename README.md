@@ -1,4 +1,5 @@
 # Tiny Town!
 
-### Things to add:
-* Missing buildings in Main District
+### Site to add
+* Pointer on hover for homes
+* Improve animation easing
