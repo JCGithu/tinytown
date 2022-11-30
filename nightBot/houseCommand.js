@@ -78,9 +78,6 @@ let houseData = {
     "arcasian": {
         "district": "Raid District"
     },
-    "aeeolus": {
-        "district": "Origins District"
-    },
     "emm__a_":{
         "name": "NotDitto",
         "district": "Main District"

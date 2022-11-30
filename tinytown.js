@@ -14,7 +14,7 @@ let zoomed = false;
 let factBanner = factBox.querySelector('div');
 let factTitle = factBanner.querySelector('h2');
 
-let fireArray = ['Fire01.svg', 'Fire04.svg', 'Fire05.svg'];
+let fireArray = ['Fire01.svg', 'Fire04.svg', 'Fire05.svg']; 
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -200,7 +200,7 @@ class House {
     }
 }
 
-let districts = ['mainDistrict', 'raidDistrict', 'lurkDistrict', 'marblesDistrict', 'originsDistrict'];
+let districts = ['mainDistrict', 'raidDistrict', 'wheatDistrict', 'ghostDistrict', 'marblesDistrict'];
 let currentDistrict = 'mainDistrict';
 
 function loadDistrict(district){
