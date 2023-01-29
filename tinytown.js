@@ -3,6 +3,8 @@ for (let def in ds){
     eval(`let ${def[ds]} = document.getElementById('${def[ds]}')`)
 }
 
+let dev = false;
+
 let townSize = town.getBoundingClientRect();
 let menuSize = menu.getBoundingClientRect();
 
@@ -67,7 +69,8 @@ function cropEffect(cropImg, cropHouse, cropScale, cropDefaultStyle){
 }
 
 class House {
-    constructor(houseData){
+    constructor(houseData, district){
+        this.district = district;
         this.left = houseData.left;
         this.right = houseData.right;
         this.y = houseData.y
@@ -102,7 +105,7 @@ class House {
         this.houseBox = document.createElement('section');
         this.houseBox.classList.add('house');
         this.house = document.createElement('img');
-        this.house.src = `./houseData/images/${this.img}`;
+        this.house.src = `./img/${this.district}/${this.img}`;
         this.house.classList.add('house');
 
         Object.assign(this.house.style, this.defaultStyle);
@@ -119,7 +122,7 @@ class House {
         if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
         this.house = document.createElement('img');
-        this.house.src = `./houseData/images/${this.img}`;
+        this.house.src = `./img/${this.district}/${this.img}`;
         this.house.classList.add('decoration');
         Object.assign(this.house.style, this.defaultStyle);
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
@@ -202,6 +205,7 @@ class House {
 
 let districts = ['mainDistrict', 'raidDistrict', 'wheatDistrict', 'ghostDistrict', 'marblesDistrict'];
 let currentDistrict = 'mainDistrict';
+if (dev) currentDistrict = 'wheatDistrict';
 
 function loadDistrict(district){
     sizeReset();
@@ -209,7 +213,7 @@ function loadDistrict(district){
     readTextFile(`./houseData/${district}.json`, function(text){
         var data = JSON.parse(text);
         for (let house in data){
-            let input = new House(data[house]);
+            let input = new House(data[house], district);
             if (!data[house].data){
                 input.decorInit();
                 continue;
@@ -221,6 +225,7 @@ function loadDistrict(district){
         }
         currentDistrict = district;
     })
+    if (dev) previewToggle();
 };
 
 let preview; 
@@ -255,13 +260,17 @@ window.addEventListener('resize', () => {
     loadDistrict(currentDistrict)
 });
 
-document.body.onkeyup = (e) => {
-    if(e.keyCode === 188){
-        if (preview.style.visibility === 'visible'){
-            preview.style.visibility = 'hidden'
-            return;
-        };
-        preview.style.visibility = 'visible';
-    }
+function previewToggle(){
+    if (preview.style.visibility === 'visible'){
+        preview.style.visibility = 'hidden'
+        return;
+    };
+    preview.style.visibility = 'visible';
 }
-//preview.style.visibility = 'visible';
+
+document.body.onkeyup = (e) => {
+    if(e.keyCode === 188) previewToggle();
+}
+
+let modFind = document.getElementById('previewClick');
+modFind.addEventListener('click', previewToggle);

@@ -1,3 +1,15 @@
 {
-
+  "Station": {
+    "col1": "f07e8e",
+    "col2": "827098",
+    "left": 10.5,
+    "y": 2.5,
+    "z": 6,
+    "scale": 3.7,
+    "title": "Ghost District Station",
+    "owner": "Arcasian Investments",
+    "notes": "Bhoo Bhoo",
+    "img": "Station_002.svg",
+    "data": true
+}
 }
