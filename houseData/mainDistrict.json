@@ -1243,25 +1243,22 @@
         "y": 5.5,
         "z": 2,
         "img": "TreeSmoke.svg",
-        "scale": 1.8,
-        "data":false
+        "scale": 1.8
     },
     "Pond 1":{
         "left": 6.2,
         "y": 17.2,
         "z": 0,
         "img": "Pond_001.svg",
-        "scale": 2,
-        "data":false
+        "scale": 2
     },
     "Pond 2":{
-        "left": 0,
+        "left": -0.5,
         "y": 11.9,
         "z": 0,
         "crop": true,
         "img": "Pond_002.svg",
-        "scale": 2.3,
-        "data":false
+        "scale": 2.3
     },
     "Pond 3":{
         "right": 0,
@@ -1269,160 +1266,140 @@
         "z": 0,
         "crop": true,
         "img": "Pond_003.svg",
-        "scale": 1.5,
-        "data":false
+        "scale": 1.5
     },
     "Tree 1":{
         "left": 0.3,
         "y": 14,
         "z": 0,
         "img": "Tree_001.svg",
-        "scale": 1.4,
-        "data":false
+        "scale": 1.4
     },
     "Tree 2":{
         "left": 1.4,
         "y": 14.7,
         "z": 2,
         "img": "Tree_002.svg",
-        "scale": 1.25,
-        "data":false
+        "scale": 1.25
     },
     "Tree 3":{
         "left": 4.6,
         "y": 13.7,
         "z": 3,
         "img": "Tree_003.svg",
-        "scale": 1.5,
-        "data":false
+        "scale": 1.5
     },
     "Tree 4":{
         "left": 6.3,
         "y": 14.7,
         "z": 0,
         "img": "Tree_004.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 5":{
         "left": 13.8,
         "y": 13.8,
         "z": 0,
         "img": "Tree_005.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 6":{
         "left": 16.4,
         "y": 16.3,
         "z": 3,
         "img": "Tree_006.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 7":{
         "left": 7.4,
         "y": 16.4,
         "z": 3,
         "img": "Tree_006.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 8":{
         "left": 9,
         "y": 11.2,
         "z": 3,
         "img": "Tree_08.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 9":{
         "left": 9.8,
         "y": 9.4,
         "z": 0,
         "img": "Tree_09.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 10":{
         "left": 12.1,
         "y": 5,
         "z": 4,
         "img": "Tree_10.svg",
-        "scale": 1.35,
-        "data":false
+        "scale": 1.35
     },
     "Tree 11":{
         "left": 18.2,
         "y": 3.6,
         "z": 8,
         "img": "Tree_11.svg",
-        "scale": 1.45,
-        "data":false
+        "scale": 1.45
     },
     "Tree 12":{
         "left": 14.45,
         "y": 6.55,
         "z": 4,
         "img": "Tree_12.svg",
-        "scale": 1.45,
-        "data":false
+        "scale": 1.45
     },
     "Tree 13":{
         "left": 16.35,
         "y": 9.5,
         "z": 1,
         "img": "Tree_13.svg",
-        "scale": 1.65,
-        "data":false
+        "scale": 1.65
     },
     "Tree 14":{
         "left": 10.5,
         "y": 17.2,
         "z": 3,
         "img": "Tree_14.svg",
-        "scale": 1.55,
-        "data":false
+        "scale": 1.55
     },
     "Tree 15":{
         "left": 13.9,
         "y": 18.1,
         "z": 3,
         "img": "Tree_15.svg",
-        "scale": 1.5,
-        "data":false
+        "scale": 1.5
     },
     "Palm Tree 1":{
         "left": 6.2,
         "y": 4.6,
         "z": 4,
         "img": "palmTree_001.svg",
-        "scale": 2,
-        "data":false
+        "scale": 2
     },
     "Palm Tree 2":{
         "left": 14.3,
         "y": 3.9,
         "z": 9,
         "img": "palmTree_002.svg",
-        "scale": 1.6,
-        "data":false
+        "scale": 1.6
     },
     "Flower 1":{
         "left": 4.7,
         "y": 2.5,
         "z": 0,
         "img": "Flower_001.svg",
-        "scale": 0.5,
-        "data":false
+        "scale": 0.5
     },
     "Flower 2":{
         "left": 15,
         "y": 2.5,
         "z": 10,
         "img": "Flower_002.svg",
-        "scale": 0.4,
-        "data":false
+        "scale": 0.4
     },
     "Bush 1":{
         "left": 0,
@@ -1430,8 +1407,7 @@
         "z": 0,
         "crop": true,
         "img": "Bush_001.svg",
-        "scale": 0.5,
-        "data":false
+        "scale": 0.5
     },
     "Bush 2":{
         "right": 0,
@@ -1439,8 +1415,7 @@
         "z": 0,
         "crop":true,
         "img": "Bush_002.svg",
-        "scale": 0.6,
-        "data":false
+        "scale": 0.6
     },
     "Bush 3":{
         "right": 0,
@@ -1448,8 +1423,7 @@
         "z": 0,
         "crop":true,
         "img": "Bush_002.svg",
-        "scale": 0.6,
-        "data":false
+        "scale": 0.6
     },
     "Bush 4":{
         "left": 16.3,
@@ -1457,15 +1431,13 @@
         "z": 20,
         "crop":true,
         "img": "Bush_003.svg",
-        "scale": 0.35,
-        "data":false
+        "scale": 0.35
     },
     "Train Tracks":{
         "left": 0,
         "y": -11,
         "z": 0,
         "img": "trainTracks.svg",
-        "scale": 20,
-        "data":false
+        "scale": 20
     }
 }

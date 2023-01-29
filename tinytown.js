@@ -122,7 +122,7 @@ class House {
         if (this.left !== undefined) this.defaultStyle.left = `${this.left * gridW}px`;
         if (this.right !== undefined) this.defaultStyle.right = `${this.right * gridW}px`;
         this.house = document.createElement('img');
-        this.house.src = `./img/${this.district}/${this.img}`;
+        this.house.src = `./img/decoration/${this.img}`;
         this.house.classList.add('decoration');
         Object.assign(this.house.style, this.defaultStyle);
         if (this.crop) cropEffect(this.img, this.house, this.scale, this.defaultStyle);
